@@ -1,0 +1,11 @@
+[00:00:00.637] Server  LOG     ✓ Ready in 467ms
+[00:00:18.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:18.650] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:06:37.744] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.747] Server  ERROR   ⨯ "unhandledRejection:" Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.750] Server  ERROR   ⨯ "unhandledRejection: " Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.756] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.758] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.779] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.781] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/media/thanhhau/DATA5/Web_amoda_Hao/FE/amoda-fe/app'
+[00:06:37.811] Server  LOG     ✓ Compiled in 32ms
