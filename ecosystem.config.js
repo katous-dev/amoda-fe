@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "Amoda",
       script: "npm",
-      args: "run start --host",
+      args: "run -- start ",
     },
   ],
 }
