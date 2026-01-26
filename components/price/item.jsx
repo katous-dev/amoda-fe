@@ -34,7 +34,7 @@ export default function SectionItem({ item }) {
           height={1000}
           src={item.image}
           loading="lazy"
-          alt={item.name}
+          alt={item.name || ""}
           objectFit="cover"
         />
       </div>

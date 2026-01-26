@@ -1,14 +1,13 @@
-
 .custom_header {
   background-color: #000000;
   color: #ffffff;
   width: 100%;
   border-bottom: 1px solid #222;
   font-family: Arial, sans-serif;
-  position: sticky;    
-  top: 0;             
-  left: 0;            
-  width: 100%;       
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -19,6 +18,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+}
+
+.section_header_left{
+  display: flex;
+  align-items: center;
+  
 }
 
 .logo_section {
@@ -37,7 +42,7 @@
 .divider {
   width: 1.5px;
   height: 25px;
-  background-color: #e31b23; 
+  background-color: #e31b23;
   margin: 0 15px;
 }
 
@@ -46,7 +51,6 @@
   font-weight: 700;
   letter-spacing: 4px;
 }
-
 
 .nav_menu {
   display: flex;
@@ -63,12 +67,13 @@
   letter-spacing: 0.5px;
 }
 
-.active,.nav_item:hover {
+.active,
+.nav_item:hover {
   color: #ffffff;
 }
 
-
-.search_section{ 
+.search_section {
+  display: block;
   position: relative;
 }
 
@@ -84,20 +89,18 @@
   padding-left: 20px;
 }
 
-.input_form{
+.input_form {
   display: none;
   position: absolute;
   padding: 20px;
   top: 110%;
   right: 0;
-  background:#ffffff;
+  background: #ffffff;
 }
 
-.search_section:hover  .input_form{
+.search_section:hover .input_form {
   display: block;
 }
-
-
 
 .input_form input {
   height: 35px;
@@ -105,8 +108,84 @@
   border: 1px solid #d0d0d0;
 }
 
+/* ----------- mobile */
+
+.mobile_toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+
 @media (max-width: 1100px) {
+  .mobile_toggle {
+    display: flex;
+  }
+
   .nav_menu {
-    display: none; 
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #111;
+    flex-direction: column;
+    padding: 80px 40px;
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    gap: 30px;
+  }
+
+  .nav_active {
+    right: 0;
+  }
+
+  .nav_item {
+    font-size: 16px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .search_section {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .divider {
+    margin: 0 10px;
+  }
+}
+
+.bar_top_active {
+  transform: translateY(7px) rotate(45deg);
+}
+.bar_mid_active {
+  opacity: 0;
+}
+.bar_bot_active {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 480px) {
+  .logo_omoda {
+    font-size: 18px;
+  }
+  .logo_jaecoo {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .search_btn {
+    border-left: none;
+    padding-left: 10px;
   }
 }

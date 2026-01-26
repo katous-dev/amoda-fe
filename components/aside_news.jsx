@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import styles from '../styles/components/aside_news.module.css'
 
 const sidebar_news = [

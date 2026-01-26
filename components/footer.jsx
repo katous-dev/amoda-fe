@@ -1,4 +1,5 @@
 import styles from "../styles/components/footer.module.css";
+import Link from "next/link"
 import { FaFacebookF } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa6";
@@ -16,9 +17,8 @@ const Footer = () => {
               width="300"
               height="200"
               style={{ border: 0 }}
-              allowfullscreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Footer = () => {
       <div className={styles.footer_bottom}>
         <div className={styles.bottom_left}>
           <div className={styles.footer_nav}>
-            <a href="#">TRANG CHỦ</a>
+            <Link href="/">TRANG CHỦ </Link>
             <a href="#">TRẢI NGHIỆM KHÁCH HÀNG</a>
             <a href="#">LIÊN HỆ</a>
           </div>
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
+  )
 };
 
 export default Footer;

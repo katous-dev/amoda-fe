@@ -1,11 +1,14 @@
+'use client'
 import styles from "../styles/components/header.module.css";
-import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import {  useState } from "react";
 
 const Header = () => {
-const pathname = usePathname()
-const router = useRouter()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
   const menuItems = [
     { title: "OMODA C5", path: `/products/1` },
     { title: "JAECOO J7", path: `/products/2` },
@@ -16,45 +19,71 @@ const router = useRouter()
     { title: "ĐĂNG KÝ LÁI THỬ", path: `/register` },
     { title: "TIN TỨC", path: `/news` },
     { title: "TUYỂN DỤNG", path: `/#` },
-
   ];
 
   return (
     <header className={styles.custom_header}>
       <div className={styles.header_container}>
-        <div className={styles.logo_section} onClick={()=>router.replace('/')}>
+        <div
+          className={styles.logo_section}
+          onClick={() => router.replace("/")}
+        >
           <span className={styles.logo_omoda}>AMODA</span>
-          <div className={styles.divider}></div>
+          <span className={styles.divider}><></></span>
           <span className={styles.logo_jaecoo}>JAECOO</span>
         </div>
 
-        <nav className={styles.nav_menu}>
+        <nav
+          className={`${styles.nav_menu} ${isMenuOpen ? styles.nav_active : ""}`}
+        >
           {menuItems.map((item, index) => (
-            <Link  key={index} href={item.path} className={`${styles.nav_item} ${pathname != null && pathname.includes(item.path) && styles.active}`}>
+            <Link
+              key={index}
+              href={item.path}
+              onClick={() => setIsMenuOpen(false)}
+              className={`${styles.nav_item} ${pathname != null && pathname.includes(item.path) ? styles.active : ""}`}
+            >
               {item.title}
             </Link>
           ))}
         </nav>
 
-        <div className={styles.search_section}>
-          <button className={styles.search_btn}>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
+        <div className={styles.section_header_left}>
+          <div
+            className={styles.mobile_toggle}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div
+              className={`${styles.bar} ${isMenuOpen ? styles.bar_top_active : ""}`}
+            ></div>
+            <div
+              className={`${styles.bar} ${isMenuOpen ? styles.bar_mid_active : ""}`}
+            ></div>
+            <div
+              className={`${styles.bar} ${isMenuOpen ? styles.bar_bot_active : ""}`}
+            ></div>
+          </div>
 
-          <div className={styles.input_form}>
-            <input type="text" name="" id="" placeholder="Tìm kiếm..."/>
+          <div className={styles.search_section}>
+            <button className={styles.search_btn}>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+
+            <div className={styles.input_form}>
+              <input type="text" name="" id="" placeholder="Tìm kiếm..." />
+            </div>
           </div>
         </div>
       </div>

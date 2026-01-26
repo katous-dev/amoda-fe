@@ -4,8 +4,6 @@ import RegisterForm from "@/components/register_form"
 import PromotionBanner from "@/components/promotio_banner"
 import styles from "@/styles/index.module.css";
 
-
-
 export default function Index() {
   return (
     <>

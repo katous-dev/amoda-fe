@@ -9,10 +9,10 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     import("../utils/bootstrap");
   }, []);
-
+const getLayout = Component.getLayout || ((page) => page);
   return (
-    <MainLayout>
-      <Component {...pageProps} />;
+    <MainLayout suppressHydrationWarning={true}>
+      {getLayout(<Component {...pageProps} />)}
     </MainLayout>
   );
 }

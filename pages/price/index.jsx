@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const mockDataProgram = [
   {
-    program: "Chương trình ưu đãi Omoda C5",
+    program: "Chương trình ưu đãi Omoda C5", 
     option: [
       {
         name: "Omoda C5 Luxury",

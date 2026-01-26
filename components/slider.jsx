@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from "react";
 import styles from "@/styles/components/silder.module.css";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";

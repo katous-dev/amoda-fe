@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         source: '/products',
         destination: '/products/1',
         permanent: true, 
-      },
+      }
     ];
   },
 };

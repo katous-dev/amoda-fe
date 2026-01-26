@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../../styles/product_detail.module.css";
 import { FaFire } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";
+import Tabs from "../../components/product_detail/tabs";
 
-
-
+const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 
 const productData = {
   category: "Ô TÔ JAECOO",
@@ -27,10 +27,14 @@ const productData = {
     { text: "Jaecoo J7 Phev (Niêm yết 969 Triệu)", type: "hot" },
     { text: "Giảm 90% LPTB trừ trực tiếp giá bán xe", type: "checkmark" },
     { text: "Hỗ trợ lãi suất 0% 12 tháng đầu", type: "checkmark" },
-    { text: "Tặng app quản lý điều khiển xe từ xa T-Box trị giá ", type: "checkmark" },
+    {
+      text: "Tặng app quản lý điều khiển xe từ xa T-Box trị giá ",
+      type: "checkmark",
+    },
     { text: "Tặng BHTV 2 năm (*có điều kiện)", type: "checkmark" },
   ],
-  mainImage: "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png",
+  mainImage:
+    "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png",
   galleryImages: [
     "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png",
     "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png",
@@ -44,10 +48,20 @@ const productData = {
 export default function ProuctDetail() {
   const router = useRouter();
   const { slug } = router.query;
+  const [activeTab, setActiveTab] = useState(false);
   const [mainDisplayImage, setMainDisplayImage] = useState(
     productData.mainImage,
   );
 
+  const fecthData = async () => {
+    const result = await fetch(`${BE_URL}/products`);
+  };
+
+  useEffect(() => {
+    if (slug) {
+      fecthData();
+    }
+  }, [slug]);
 
   return (
     <div className={styles.product_detail_container}>
@@ -115,16 +129,14 @@ export default function ProuctDetail() {
           </div>
 
           <div className={styles.promotion_box}>
-            <h3 className={styles.promo_title}>
-              KHUYẾN MÃI & ƯU ĐÃI THÁNG 1
-            </h3>
+            <h3 className={styles.promo_title}>KHUYẾN MÃI & ƯU ĐÃI THÁNG 1</h3>
             <ul className={styles.promo_list}>
               {productData.promotions.map((promo, index) => (
                 <li
                   key={index}
-                  className={`styles.promo_item styles.promo_${promo.type}`}
+                  className={`${styles.promo_item} styles.promo_${promo.type}`}
                 >
-                  {promo.type === "hot" ? <FaFire/> :  <FaCircleCheck/>}
+                  {promo.type === "hot" ? <FaFire /> : <FaCircleCheck />}
                   &nbsp;
                   {promo.text}
                 </li>
@@ -161,6 +173,10 @@ export default function ProuctDetail() {
           </div>
         </div>
       </div>
+
+      <div className={styles.product_depscription}>
+              <Tabs activeTab={activeTab}/>
+      </div>
     </div>
-  )
+  );
 }

@@ -8,7 +8,7 @@ export default function Document() {
         <meta charSet="UTF-8" />
         <meta
           name="description"
-          content="Mẫu xe ô tô Omoda & Jaecoo hoàn toàn mới, sự kết hợp tinh hoa giữa công nghệ tối tân và thiết kế sang trọng."
+          content="Mẫu xe ô tô Amoda  hoàn toàn mới, sự kết hợp tinh hoa giữa công nghệ tối tân và thiết kế sang trọng."
         />
         <meta name="keywords" content="omodajaecoo" />
 
