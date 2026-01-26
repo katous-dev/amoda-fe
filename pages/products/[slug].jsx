@@ -48,6 +48,7 @@ export default function ProuctDetail() {
     productData.mainImage,
   );
 
+
   return (
     <div className={styles.product_detail_container}>
       <div className={styles.product_grid}>

@@ -31,8 +31,8 @@ const Footer = () => {
           <p>355 Phạm Hùng, Bình Hưng, Bình Chánh, TP.HCM</p>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:omodajaecoobinhchanh@gmail.com">
-              omodajaecoobinhchanh@gmail.com
+            <a href="mailto:amodajaecoobinhchanh@gmail.com">
+              amodajaecoobinhchanh@gmail.com
             </a>
           </p>
         </div>
@@ -60,10 +60,10 @@ const Footer = () => {
             <a href="#">TRẢI NGHIỆM KHÁCH HÀNG</a>
             <a href="#">LIÊN HỆ</a>
           </div>
-          <p className={styles.copyright}>Copyright 2026 © omodajaecoo.vn</p>
+          <p className={styles.copyright}>Copyright 2026 © amodajaecoo.vn</p>
         </div>
         <div className={styles.bottom_right}>
-          <p>OMODA & JAECOO BÌNH CHÁNH - TP HCM</p>
+          <p>AMODA & JAECOO BÌNH CHÁNH - TP HCM</p>
         </div>
       </div>
     </footer>

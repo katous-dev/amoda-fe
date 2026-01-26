@@ -12,7 +12,7 @@ const router = useRouter()
     { title: "JAECOO J7 AWD", path: `/products/3` },
     { title: "JAECOO J7 PHEV", path: `/products/4` },
 
-    { title: "BẢNG GIÁ", path: `/#` },
+    { title: "BẢNG GIÁ", path: `/price` },
     { title: "ĐĂNG KÝ LÁI THỬ", path: `/register` },
     { title: "TIN TỨC", path: `/news` },
     { title: "TUYỂN DỤNG", path: `/#` },
@@ -52,6 +52,10 @@ const router = useRouter()
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
+
+          <div className={styles.input_form}>
+            <input type="text" name="" id="" placeholder="Tìm kiếm..."/>
+          </div>
         </div>
       </div>
     </header>

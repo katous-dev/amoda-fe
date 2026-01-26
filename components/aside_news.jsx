@@ -17,7 +17,7 @@ export default function AsideNews() {
       <ul className={styles.sidebar_list}>
         {sidebar_news.map((title, index) => (
           <li key={index} className={styles.sidebar_item}>
-            <Link href={`/news/${title}`} className={styles.sidebar_link}>
+            <Link href={`/news/${1}`} className={styles.sidebar_link}>
               {title}
             </Link>
           </li>

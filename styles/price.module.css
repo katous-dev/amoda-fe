@@ -1,0 +1,55 @@
+.promotion_container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.price_header {
+  padding: 20px;
+}
+
+.price_header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.price_header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  max-width: 900px;
+  margin: 10px auto;
+  line-height: 1.5;
+}
+
+
+.main_banner {
+  position: relative;
+  height: 500px;
+  background: var(--gradient-bg); 
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .slogan h2 {
+    font-size: 30px;
+  }
+  .main-banner {
+    height: 350px;
+  }
+}

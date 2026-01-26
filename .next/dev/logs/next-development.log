@@ -1,1 +1,315 @@
-[00:00:10.172] Server  LOG     ✓ Ready in 9.7s
+[00:00:02.100] Server  LOG     ✓ Ready in 1437ms
+[00:00:02.625] Server  ERROR   Invalid DOM property `allowfullscreen`. Did you mean `allowFullScreen`?
+[00:00:02.625] Server  ERROR   Invalid DOM property `referrerpolicy`. Did you mean `referrerPolicy`?
+[00:00:03.802] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:00:03.803] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:00:03.803] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:07.036] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:00:07.036] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:00:07.036] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:21.839] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:00:21.840] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:00:21.840] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2025/01/j7-phev-trang.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:26:29.502] Server  ERROR   Error: Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" is missing required "width" property.
+[00:26:29.514] Server  ERROR   ⨯ Error: Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" is missing required "width" property.
+[00:26:29.520] Server  ERROR   ⨯ Error: Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" is missing required "width" property.
+[00:26:30.159] Browser ERROR   uncaughtError: Error: Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" is missing required "width" property.
+[00:26:49.909] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:26:50.156] Server  LOG     ✓ Compiled in 8ms
+[00:26:51.198] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:26:51.198] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:26:51.198] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Container fn={function fn}>
+      <PagesDevOverlayBridge>
+        <PagesDevOverlayErrorBoundary>
+          <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={true}>
+            <App pageProps={{}} Component={function Index} err={undefined} router={{sdc:{},sbc:{}, ...}}>
+              <MainLayout>
+                <Header>
+                  <header className="header-mod...">
+                    <div
+                      className="header-module__bEoNOa__header_container"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className="header-module__bEoNOa__logo_section"
+                        onClick={function onClick}
+-                       bis_skin_checked="1"
+                      >
+                        <span>
+                        <div
+                          className="header-module__bEoNOa__divider"
+-                         bis_skin_checked="1"
+                        >
+                        ...
+                      <nav>
+                      <div
+                        className="header-module__bEoNOa__search_section"
+-                       bis_skin_checked="1"
+                      >
+                        <button>
+                        <div
+                          className="header-module__bEoNOa__input_form"
+-                         bis_skin_checked="1"
+                        >
+                <main>
+                  <Index>
+                    <div
+                      className="price-module__8mBPDW__promotion_container"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className="price-module__8mBPDW__price_header"
+-                       bis_skin_checked="1"
+                      >
+                      <div
+                        className="price-module__8mBPDW__main_banner"
+-                       bis_skin_checked="1"
+                      >
+                        <div
+                          className={undefined}
+-                         bis_skin_checked="1"
+                        >
+                          <div
+                            className="price-module__8mBPDW__brand_logo"
+-                           bis_skin_checked="1"
+                          >
++                           OMODA | JAECOO
+                          <div
+                            className="price-module__8mBPDW__slogan"
+-                           bis_skin_checked="1"
+                          >
+                          <div
+                            className="price-module__8mBPDW__character_car_group"
+-                           bis_skin_checked="1"
+                          >
+                  ...
+                <Footer>
+                  <footer className="footer-mod...">
+                    <div
+                      className="footer-module__pYvrhG__footer_content"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className={[...]}
+-                       bis_skin_checked="1"
+                      >
+                        <h3>
+                        <div
+                          className="footer-module__pYvrhG__map_wrapper"
+-                         bis_skin_checked="1"
+                        >
+                      <div
+                        className="footer-module__pYvrhG__footer_column  footer-module__pYvrhG__info_section"
+-                       bis_skin_checked="1"
+                      >
+                      <div
+                        className={[...]}
+-                       bis_skin_checked="1"
+                      >
+                        <h3>
+                        <div
+                          className="footer-module__pYvrhG__social_icons"
+-                         bis_skin_checked="1"
+                        >
+                    <div
+                      className="footer-module__pYvrhG__footer_bottom"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className={undefined}
+-                       bis_skin_checked="1"
+                      >
+                        <div
+                          className="footer-module__pYvrhG__footer_nav"
+-                         bis_skin_checked="1"
+                        >
+                        ...
+                      <div
+                        className="footer-module__pYvrhG__bottom_right"
+-                       bis_skin_checked="1"
+                      >
+            ...
+
+[00:26:51.308] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:27:40.862] Server  LOG     ✓ Compiled in 13ms
+[00:27:57.396] Server  LOG     ✓ Compiled in 11ms
+[00:28:21.677] Server  LOG     ✓ Compiled in 11ms
+[00:28:30.922] Server  LOG     ✓ Compiled in 8ms
+[00:28:59.191] Server  LOG     ✓ Compiled in 7ms
+[00:29:00.196] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:29:24.199] Server  LOG     ✓ Compiled in 10ms
+[00:29:44.656] Server  LOG     ✓ Compiled in 14ms
+[00:36:09.273] Server  LOG     ✓ Compiled in 15ms
+[00:36:21.185] Server  LOG     ✓ Compiled in 7ms
+[00:41:40.691] Server  LOG     ✓ Compiled in 10ms
+[00:42:06.280] Server  LOG     ✓ Compiled in 7ms
+[00:45:49.776] Server  LOG     ✓ Compiled in 52ms
+[00:46:01.012] Server  LOG     ✓ Compiled in 12ms
+[00:46:36.822] Server  LOG     ✓ Compiled in 9ms
+[00:46:50.534] Server  LOG     ✓ Compiled in 7ms
+[00:47:18.286] Server  LOG     ✓ Compiled in 22ms
+[00:47:20.736] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:47:20.736] Browser ERROR   Image is missing required "src" property: <img>
+[00:47:20.736] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:47:52.758] Server  LOG     ✓ Compiled in 8ms
+[00:47:53.187] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:48:09.414] Server  LOG     ✓ Compiled in 8ms
+[00:48:10.180] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[00:50:36.495] Server  LOG     ✓ Compiled in 59ms
+[00:50:45.660] Server  LOG     ✓ Compiled in 9ms
+[00:51:16.979] Server  LOG     ✓ Compiled in 12ms
+[00:51:44.131] Server  LOG     ✓ Compiled in 13ms
+[00:51:56.980] Server  LOG     ✓ Compiled in 9ms
+[00:52:10.110] Server  LOG     ✓ Compiled in 9ms
+[00:52:56.489] Server  LOG     ✓ Compiled in 15ms
+[00:53:51.710] Server  LOG     ✓ Compiled in 8ms
+[00:54:03.359] Server  LOG     ✓ Compiled in 16ms
+[00:54:49.097] Server  LOG     ✓ Compiled in 8ms
+[00:55:24.305] Server  LOG     ✓ Compiled in 9ms
+[00:55:37.877] Server  LOG     ✓ Compiled in 10ms
+[00:55:51.020] Server  LOG     ✓ Compiled in 11ms
+[00:56:47.485] Server  LOG     ✓ Compiled in 15ms
+[00:56:48.182] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:57:00.374] Server  LOG     ✓ Compiled in 10ms
+[00:57:15.818] Server  LOG     ✓ Compiled in 10ms
+[00:57:33.778] Server  LOG     ✓ Compiled in 8ms
+[00:57:40.942] Server  LOG     ✓ Compiled in 12ms
+[00:57:48.570] Server  LOG     ✓ Compiled in 9ms
+[00:57:58.890] Server  LOG     ✓ Compiled in 9ms
+[00:58:57.326] Server  ERROR   PageNotFoundError: Cannot find module for page: /news/L%C3%AC%20X%C3%AC%20%C4%90%E1%BA%A7u%20Xu%C3%A2n:%20Gi%C3%A1%20L%C4%83n%20B%C3%A1nh%20Omoda%20C5%20&%20Jaecoo%20J7%20Th%C3%A1ng%201/2026
+[00:58:58.581] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:58:58.581] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:58:58.581] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Container fn={function fn}>
+      <PagesDevOverlayBridge>
+        <PagesDevOverlayErrorBoundary>
+          <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={false}>
+            <App pageProps={{statusCode:404, ...}} Component={function ErrorPage} err={undefined} ...>
+              <MainLayout>
+                <Header>
+                  <header className="header-mod...">
+                    <div
+                      className="header-module__bEoNOa__header_container"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className="header-module__bEoNOa__logo_section"
+                        onClick={function onClick}
+-                       bis_skin_checked="1"
+                      >
+                        <span>
+                        <div
+                          className="header-module__bEoNOa__divider"
+-                         bis_skin_checked="1"
+                        >
+                        ...
+                      <nav>
+                      <div
+                        className="header-module__bEoNOa__search_section"
+-                       bis_skin_checked="1"
+                      >
+                        <button>
+                        <div
+                          className="header-module__bEoNOa__input_form"
+-                         bis_skin_checked="1"
+                        >
+                <main>
+                  <ErrorPage statusCode={404} hostname="localhost">
+                    <div
+                      style={{fontFamily:"system-ui,...",height:"100vh",textAlign:"center",display:"flex",flexDirection:"column", ...}}
+-                     bis_skin_checked="1"
+                    >
+                      <Head>
+                      <div
+                        style={{lineHeight:"48px"}}
+-                       bis_skin_checked="1"
+                      >
+                        <style>
+                        <h1>
+                        <div
+                          style={{display:"inline-block"}}
+-                         bis_skin_checked="1"
+                        >
+                  ...
+                <Footer>
+                  <footer className="footer-mod...">
+                    <div
+                      className="footer-module__pYvrhG__footer_content"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className={[...]}
+-                       bis_skin_checked="1"
+                      >
+                        <h3>
+                        <div
+                          className="footer-module__pYvrhG__map_wrapper"
+-                         bis_skin_checked="1"
+                        >
+                      <div
+                        className="footer-module__pYvrhG__footer_column  footer-module__pYvrhG__info_section"
+-                       bis_skin_checked="1"
+                      >
+                      <div
+                        className={[...]}
+-                       bis_skin_checked="1"
+                      >
+                        <h3>
+                        <div
+                          className="footer-module__pYvrhG__social_icons"
+-                         bis_skin_checked="1"
+                        >
+                    <div
+                      className="footer-module__pYvrhG__footer_bottom"
+-                     bis_skin_checked="1"
+                    >
+                      <div
+                        className={undefined}
+-                       bis_skin_checked="1"
+                      >
+                        <div
+                          className="footer-module__pYvrhG__footer_nav"
+-                         bis_skin_checked="1"
+                        >
+                        ...
+                      <div
+                        className="footer-module__pYvrhG__bottom_right"
+-                       bis_skin_checked="1"
+                      >
+            ...
+
+[00:59:00.378] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? allowfullscreen allowFullScreen
+[00:59:00.378] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? referrerpolicy referrerPolicy
+[00:59:00.378] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:59:35.778] Server  LOG     ✓ Compiled in 22ms
