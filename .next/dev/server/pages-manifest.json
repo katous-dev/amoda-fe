@@ -1,8 +1,12 @@
 {
+  "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/admin/news": "pages/admin/news.js",
+  "/admin/banner": "pages/admin/banner.js",
   "/admin/products": "pages/admin/products.js",
+  "/news": "pages/news.js",
+  "/news/[slug]": "pages/news/[slug].js",
+  "/price": "pages/price.js",
   "/products/[slug]": "pages/products/[slug].js",
   "/search/[slug]": "pages/search/[slug].js"
 }

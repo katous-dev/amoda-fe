@@ -4,7 +4,7 @@
 type AppRoutes = never
 type PageRoutes = "/" | "/admin/banner" | "/admin/dashboard" | "/admin/layout" | "/admin/news" | "/admin/products" | "/login" | "/news" | "/news/[slug]" | "/price" | "/products/[slug]" | "/register" | "/search/[slug]"
 type LayoutRoutes = never
-type RedirectRoutes = "/products"
+type RedirectRoutes = "/products" | "/search"
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
 
@@ -23,6 +23,7 @@ interface ParamMap {
   "/products": {}
   "/products/[slug]": { "slug": string; }
   "/register": {}
+  "/search": {}
   "/search/[slug]": { "slug": string; }
 }
 
