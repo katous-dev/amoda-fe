@@ -2,8 +2,14 @@ self.__BUILD_MANIFEST = {
   "/": [
     "static/chunks/pages/index.js"
   ],
-  "/admin/banner": [
-    "static/chunks/pages/admin/banner.js"
+  "/_error": [
+    "static/chunks/pages/_error.js"
+  ],
+  "/admin/dashboard": [
+    "static/chunks/pages/admin/dashboard.js"
+  ],
+  "/admin/news": [
+    "static/chunks/pages/admin/news.js"
   ],
   "/admin/products": [
     "static/chunks/pages/admin/products.js"
@@ -19,6 +25,9 @@ self.__BUILD_MANIFEST = {
   ],
   "/products/[slug]": [
     "static/chunks/pages/products/[slug].js"
+  ],
+  "/register": [
+    "static/chunks/pages/register.js"
   ],
   "/search/[slug]": [
     "static/chunks/pages/search/[slug].js"

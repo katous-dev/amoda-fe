@@ -134,8 +134,9 @@ const CreateBanner_Dialog = ({
       PaperProps={{
         sx: {
           borderRadius: fullScreen ? 0 : "10px",
-          padding: "16px",
-          maxWidth: "800px",
+          padding: "8px",
+           maxWidth: "700px",
+          maxHeight: "90vh",
         },
       }}
     >

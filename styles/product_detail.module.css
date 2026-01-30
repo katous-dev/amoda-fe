@@ -152,6 +152,14 @@
   margin-bottom: 30px;
 }
 
+.optionCar{
+   background-color: #a4a4a4a8; 
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
 .promo_title {
   font-size: 18px;
   font-weight: bold;
@@ -226,6 +234,31 @@
   background-color: #b50000;
 }
 
+.social_icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.follow_section {
+  text-align: right;
+}
+
+.icon_circle {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.icon_circle:hover {
+  background: #a4a4a4;
+  color: #ffffff;
+}
 
 @media (max-width: 900px) {
   .product_grid {

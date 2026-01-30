@@ -7,7 +7,9 @@ import DynamicTable from "../../components/table/dynamicTable";
 import Form_news from "../../components/dialogs/form_news";
 import Delete_Dialog from "../../components/dialogs/delete";
 import { toast } from "react-toastify";
-
+import defaultImage from "../../public/image/default-placeholder.png";
+import Image from "next/image";
+// default-placeholder.png
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -17,7 +19,7 @@ const mockdata = [
     _id: "1",
     nameNews: "1",
     dtailDescription: "1",
-    imagesAvt: "1",
+    imagesAvt: "",
     media: [],
     dateTime: "1",
     slug: "1",
@@ -56,9 +58,24 @@ export default function NewsTable() {
   }, []);
 
   const newsColumns = [
-    { key: "_id", label: "Id" },
+     {
+      key: "imagesAvt",
+      label: "Hình ảnh",
+      render: (value) => (
+        <Box borderRadius={2}>
+          <Image
+            alt="hình ảnh dản phẩm"
+            borderRadius={2}
+            objectFit="cover"
+            width={50}
+            height={50}
+            src={value || defaultImage}
+          />
+        </Box>
+      ),
+    },
     { key: "nameNews", label: "Tên bài viết" },
-    { key: "dateTime", label: "Ngày đăng" },
+    { key: "dateTime", label: "Ngày đăng" ,render: (value) => value ? new Date(value).toLocaleDateString() : ""},
     {
       key: "option",
       label: "",

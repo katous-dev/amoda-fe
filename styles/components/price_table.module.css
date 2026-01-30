@@ -1,0 +1,93 @@
+.wrapper {
+  margin: 2rem 0;
+  
+}
+.tableHeading {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  text-align: left;
+  font-size: 0.75rem;
+  color: #666;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+.table td {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.versionColumn {
+  color: #0056b3;
+  font-weight: bold;
+}
+.mainPrice {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.promoTag {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+.subDetail {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  padding: 0 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .tableHeading {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .table th {
+    text-align: center;
+  }
+
+  .table td {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .versionName {
+    font-size: 0.85rem;
+  }
+  .price {
+    font-size: 1rem;
+  }
+  .taxTag {
+    font-size: 0.75rem;
+  }
+
+  .table th {
+    text-align: center;
+  }
+
+  .table td {
+    text-align: center;
+  }
+}

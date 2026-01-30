@@ -37,7 +37,6 @@ export default function Editor({
         quill.clipboard.dangerouslyPasteHTML(value);
       }
 
-      // 2. Xử lý Custom Image Handler
       quill.getModule("toolbar").addHandler("image", async () => {
         if (onImageUpload) {
           const url = await onImageUpload();
@@ -68,7 +67,7 @@ export default function Editor({
     <Box
       sx={{
         minHeight: "300px",
-        "& .ql-container": { minHeight: "250px", fontSize: "16px" },
+        "& .ql-container": { minHeight: "250px", fontSize: "16px" , width: "100%" },
       }}
     >
       <div ref={quillRef} />

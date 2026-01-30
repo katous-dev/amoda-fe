@@ -5,18 +5,27 @@ import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import defaultImage from "../public/image/default-placeholder.png";
 import styles_image from "@/styles/ImageNext.module.css";
-
+import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
 const init = [
   {
-    imgLink:"",    nameTitle: "Banner Xuân 1",
+    imgLink: "",
+    nameTitle: "Banner Xuân 1",
     order: 1,
     __v: 0,
-    _id: "6979d7e1961ab27a439942bc", 
+    _id: "6979d7e1961ab27a439942bc",
   },
 ];
 
-const Slider = ({ listSilder = [], listString = [], size = 550, index= 0 }) => {
+const Slider = ({
+  listSilder = [],
+  listString = [],
+  style = {
+    maxHeight: 550,
+    minHeight: 200,
+  },
+  index = 0,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentList = useMemo(() => {
     return listString.length > 0 ? listString : listSilder;
@@ -42,24 +51,24 @@ const Slider = ({ listSilder = [], listString = [], size = 550, index= 0 }) => {
   }, [currentIndex]);
 
   return (
-    <div className={styles.slider_wrapper} style={{ maxHeight: size }}>
+    <div className={styles.slider_wrapper} style={style}>
       <div
         className={styles.slider_container}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {listString.length == 0 &&
-          currentList.map((item) => (
+          currentList.map((item, index) => (
             <div
               className={`${styles.slider_item} ${styles_image.image_container}`}
               key={item.order}
             >
               <Image
                 src={currentList.length > 0 ? item.imgLink : defaultImage}
-                alt={item.nameTitle || ""}
+                alt={item.nameTitle || index}
                 className={`${styles.slider_image} ${styles_image.custom_news_image}`}
                 priority
                 fill
-              /> 
+              />
 
               <div className={styles.slider_overlay}>
                 <div className={styles.content_box}>
@@ -70,17 +79,14 @@ const Slider = ({ listSilder = [], listString = [], size = 550, index= 0 }) => {
             </div>
           ))}
 
-        {listString.length != 0 &&
+        {currentList != 0 &&
           currentList.map((item, index) => (
-             <div
+            <div
               className={`${styles.slider_item} ${styles_image.image_container}`}
               key={index}
             >
               <Image
-                src={
-                  (item instanceof File ? URL.createObjectURL(item) : item) ||
-                  defaultImage
-                }
+                src={item || defaultImage}
                 alt={"đây là ảnh " + index}
                 className={`${styles.slider_image} ${styles_image.custom_news_image}`}
                 priority
@@ -94,20 +100,20 @@ const Slider = ({ listSilder = [], listString = [], size = 550, index= 0 }) => {
         className={`${styles.nav_btn} ${styles.prev_btn}`}
         onClick={prevSlide}
       >
-        <FaCircleArrowLeft size={35} />
+        <IoIosArrowDropleft size={40} color="#919191" />
       </button>
       <button
         className={`${styles.nav_btn} ${styles.next_btn}`}
         onClick={nextSlide}
       >
-        <FaCircleArrowRight size={35} />
+        <IoIosArrowDropright size={40} color="#919191" />
       </button>
 
       <div className={styles.pagination_dots}>
         {currentList.map((_, index) => (
           <span
             key={index}
-            className={`dot ${currentIndex === index ? styles.active_dot : ""}`}
+            className={`${styles.dot} ${currentIndex === index ? styles.active_dot : ""}`}
             onClick={() => setCurrentIndex(index)}
           ></span>
         ))}

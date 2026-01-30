@@ -17,13 +17,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 0px 20px;
 }
 
-.section_header_left{
+.section_header_left {
   display: flex;
   align-items: center;
-  
 }
 
 .logo_section {
@@ -75,7 +74,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 10px;
-  background-color: #000; 
+  background-color: #000;
 }
 
 .search_container {
@@ -85,7 +84,7 @@
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 40px; 
+  width: 40px;
   height: 40px;
   position: relative;
   cursor: pointer;
@@ -93,8 +92,8 @@
 
 .search_container:hover,
 .search_container:focus-within {
-  width: 250px; 
-  background-color: #fff; 
+  width: 250px;
+  background-color: #fff;
 }
 
 .search_input {
@@ -121,7 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; 
+  color: #fff;
   transition: color 0.3s ease;
   background-color: transparent;
   border: none;
@@ -135,7 +134,6 @@
 .search_icon {
   cursor: pointer;
 }
-
 
 .search_container::before {
   content: "";
@@ -170,9 +168,63 @@
   transition: 0.3s;
 }
 
+
+.search {
+  display: none; 
+  gap: 5px;      
+}
+
+
+.inputSearch {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.buttonSubmit {
+  padding: 8px 15px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0b7dda;
+}
+
+
 @media (max-width: 1100px) {
+
+  .header_container {
+    padding: 9px 10px;
+  }
+
+  .search{
+    display: flex;
+  }
+
   .mobile_toggle {
     display: flex;
+  }
+
+  .search_wrapper{
+    display: none;
+  }
+
+  .search_container:hover,
+  .search_container:focus-within {
+    width: 180px;
+  }
+
+  .logo_omoda {
+    font-size: 18px;
+  }
+  .logo_jaecoo {
+    font-size: 16px;
+    letter-spacing: 2px;
   }
 
   .nav_menu {
@@ -232,4 +284,10 @@
     border-left: none;
     padding-left: 10px;
   }
+
+   .search_container:hover,
+  .search_container:focus-within {
+    width: 180;
+  }
+
 }

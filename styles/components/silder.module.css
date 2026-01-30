@@ -61,8 +61,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: transparent;
   border: none;
   cursor: pointer;
   border-radius: 50%;
@@ -71,7 +70,7 @@
 }
 
 .nav_btn:hover {
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(229, 229, 229, 0.934); */
 }
 
 .prev_btn {  left: 20px }
@@ -89,8 +88,8 @@
 }
 
 .dot {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;

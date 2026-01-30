@@ -1,3 +1,4 @@
+"use client"
 import Slider from "@/components/slider";
 import ListItem_Main from "@/components/listItem_main";
 import RegisterForm from "@/components/register_form";
@@ -52,7 +53,7 @@ export default function Index() {
 
   return (
     <>
-      <Slider listSilder={listBanner} />
+      <Slider listSilder={listBanner}  />
       <div className={styles.content_main}>
         <ListItem_Main listData={listProduct} />
         <RegisterForm />

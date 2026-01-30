@@ -189,8 +189,9 @@ export default function Form_news({
       PaperProps={{
         sx: {
           borderRadius: fullScreen ? 0 : "10px",
-          padding: "16px",
-          maxWidth: "800px",
+          padding: "8px",
+          maxWidth: "700px",
+          maxHeight: "90vh",
         },
       }}
     >
@@ -247,22 +248,8 @@ export default function Form_news({
                     alt={formData.nameNews}
                     src={formData.imagesAvt || defaultImage}
                     onClick={() => inputRef.current.click()}
-                    style={{ height: 400, objectFit: "cover" }}
+                    style={{ height: 300, objectFit: "cover" }}
                   />
-
-                  {/* <div
-                    className={` ${styles_image.image_container}`}
-                    key={index}
-                  >
-                    <Image
-                      src={formData.imagesAvt || defaultImage}
-                      onClick={() => inputRef.current.click()}
-                      alt={"đây là ảnh " + index}
-                      className={`${styles_image.custom_news_image}`}
-                      priority
-                      fill
-                    />
-                  </div> */}
 
                   <input
                     type="file"

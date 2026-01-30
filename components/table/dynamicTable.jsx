@@ -9,7 +9,7 @@ import {
 
 const DynamicTable = ({ columns, data }) => {
   return (
-    <TableContainer component={Paper} sx={{ boxShadow: 3, borderRadius: 2 }}>
+    <TableContainer component={Paper} sx={{ boxShadow: 3 }} style={{borderRadius:2}}>
       <Table sx={{ minWidth: 650 }} aria-label="dynamic table">
         <TableHead sx={{ backgroundColor: "#f5f5f5" }}>
           <tr>

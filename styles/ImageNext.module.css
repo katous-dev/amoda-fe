@@ -1,14 +1,21 @@
 .image_container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   aspect-ratio: 16 / 9;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 12px;
 }
 
 .custom_news_image {
   object-fit: cover;
   object-position: center;
+  width: 100%;
+}
+
+.auto_height_container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; 
+  margin: 0 auto;
 }

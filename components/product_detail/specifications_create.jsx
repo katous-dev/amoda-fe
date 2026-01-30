@@ -21,7 +21,7 @@ export default function Specifications_Create({
   const [formdata, setFormData] = useState(data);
   return (
     <section>
-      <Slider size={500} listString={silder} />
+      <Slider style={{ maxHeight: 500, minHeight: 300 }} listString={silder} />
       <h4 className={styles.main_title}>
         <InlineEdit
           value={data.title}

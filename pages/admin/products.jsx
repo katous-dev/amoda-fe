@@ -18,6 +18,7 @@ myHeaders.append("Content-Type", "application/json");
 
 
 export default function ProductTable() {
+  const [searchText, setSearchText] = useState("");
   const [openCreate, setOpenCreate] = useState({
     editForm: false,
     item: {},
@@ -155,6 +156,9 @@ export default function ProductTable() {
               </InputAdornment>
             ),
           }}
+
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
         />
         <Stack direction="row" spacing={1}>
           <Button
@@ -180,7 +184,7 @@ export default function ProductTable() {
               "&:hover": { bgcolor: "#5249f0" },
             }}
           >
-            Tạo
+            Thêm sản phẩm
           </Button>
         </Stack>
       </Stack>

@@ -3,40 +3,54 @@ import { IoSearch } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import Image from "next/image";
 import styles from "../styles/components/register_form.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
 export default function RegisterForm() {
+  const [listProduct, setListProduct] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     selected: "",
-    installment: false
-  })
+    installment: false,
+  });
 
+  const fecthProducts = () => {
+    fetch(`${BE_URL}/products `, {
+      method: "GET",
+      headers: myHeaders,
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        setListProduct(res.products);
+      });
+  };
 
+  useEffect(() => {
+    fecthProducts();
+  }, []);
   const handleSubmit = (e) => {
     fetch(`${BE_URL}/email/businessCustomers/ `, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: myHeaders,
-    })
-      .then((res) => {
-        if(!res.ok) {
-          toast.error("Gửi thông tin thất bại")
-          return
-        }
-          toast.success("Gửi thông tin thành công")
+    }).then((res) => {
+      if (!res.ok) {
+        toast.error("Gửi thông tin thất bại");
+        return;
+      }
+      toast.success("Gửi thông tin thành công");
 
-        return res.json();
-      })
-    
+      return res.json();
+    });
   };
 
-   const handleUpdate = (field, newValue) => {
+  const handleUpdate = (field, newValue) => {
     setFormData((pre) => ({ ...pre, [field]: newValue }));
   };
 
@@ -59,8 +73,8 @@ export default function RegisterForm() {
 
         <ul className={styles.feature_list}>
           <li>
-            Lái thử xe ô tô <strong>Omoda C5</strong> &
-            <strong>Jaecoo J7</strong>
+            Lái thử xe ô tô&nbsp;<strong>Omoda C5 </strong> &nbsp;&&nbsp;
+            <strong> Jaecoo J7 </strong>
           </li>
           <li>Báo giá lăn bánh và ưu đãi mới nhất</li>
           <li>Hỗ trợ lái thử xe tận nhà</li>
@@ -94,10 +108,13 @@ export default function RegisterForm() {
 
         <div className={styles.registration_form_block}>
           <h2 className={styles.form_heading}>LÁI THỬ XE & TRẢI NGHIỆM</h2>
-          <form className={styles.booking_form_inner} onSubmit={(e)=>{
-            e.preventDefault()
-            handleSubmit()
-          }}>
+          <form
+            className={styles.booking_form_inner}
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
             <div className={styles.input_field_group}>
               <span className={styles.field_icon}>
                 <FaUser />
@@ -106,8 +123,8 @@ export default function RegisterForm() {
                 type="text"
                 placeholder="Họ và tên"
                 className={styles.text_input}
-                 value={formData.name}
-                onChange={(e)=>handleUpdate("name", e.target.value)}
+                value={formData.name}
+                onChange={(e) => handleUpdate("name", e.target.value)}
               />
             </div>
 
@@ -121,7 +138,7 @@ export default function RegisterForm() {
                 required
                 className={styles.text_input}
                 value={formData.phone}
-                onChange={(e)=>handleUpdate("phone", e.target.value)}
+                onChange={(e) => handleUpdate("phone", e.target.value)}
               />
             </div>
 
@@ -129,10 +146,19 @@ export default function RegisterForm() {
               <span className={styles.field_icon}>
                 <IoSearch />
               </span>
-              <select value={formData.selected} className={styles.select_input} onChange={(e)=> handleUpdate("selected", e.currentTarget.value)}>
+              <select
+                value={formData.selected}
+                className={styles.select_input}
+                onChange={(e) =>
+                  handleUpdate("selected", e.currentTarget.value)
+                }
+              >
                 <option value="">Chọn xe</option>
-                <option value="omoda_c5">Omoda C5</option>
-                <option value="jaecoo_j7">Jaecoo J7</option>
+                  {listProduct.map((product) => (
+                    <option key={product.slug} value={product.slug}>
+                      {product.name}
+                    </option>
+                  ))}
               </select>
             </div>
 
@@ -143,12 +169,17 @@ export default function RegisterForm() {
                   name="pay_method"
                   value="installment"
                   defaultChecked
-                  onChange={(e)=>handleUpdate("select", true)}
+                  onChange={(e) => handleUpdate("select", true)}
                 />
                 <span className={styles.radio_text}>Trả góp</span>
               </label>
               <label className={styles.radio_label}>
-                <input type="radio" name="pay_method" value="full" onChange={(e)=>handleUpdate("select", false)}/>
+                <input
+                  type="radio"
+                  name="pay_method"
+                  value="full"
+                  onChange={(e) => handleUpdate("select", false)}
+                />
                 <span className={styles.radio_text}>Trả thẳng</span>
               </label>
             </div>

@@ -1,5 +1,3480 @@
-[00:00:01.414] Server  LOG     ✓ Ready in 1104ms
-[00:00:13.752] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:02.695] Server  LOG     ✓ Ready in 1970ms
+[00:00:05.819] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:00:05.819] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:00:05.819] Browser ERROR   Image is missing required "src" property: <img>
+[00:00:05.819] Browser ERROR   Image is missing required "src" property: <img>
+[00:00:07.371] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:07.374] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:07.376] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:07.378] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:07.639] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.639] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.640] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:07.640] Browser ERROR   {"code":"MODULE_NOT_FOUND"}
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:07.873] Browser ERROR   unhandledRejection: Error: Cannot find module './PriceTable.module.css'
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:07.873] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.535] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.537] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.539] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.540] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.543] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.545] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.546] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.549] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:16.574] Server  LOG     ✓ Compiled in 72ms
+[00:00:16.693] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:16.693] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:16.693] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:16.693] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:18.992] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:18.993] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:18.996] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:19.000] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:19.007] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:19.342] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.342] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.342] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.342] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:19.750] Browser ERROR   uncaughtError: Error: ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+
+[00:00:19.975] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.975] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.975] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:19.975] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:20.085] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:20.085] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:20.085] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:20.085] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:53.252] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:53.260] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:53.288] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.290] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.291] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.292] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.300] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.331] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.332] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.335] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.336] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.340] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:53.761] Browser ERROR   uncaughtError: Error: ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.274] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:54.928] Browser ERROR   ./components/price/price_table.jsx:61:25
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     |                         ^^^^^^^^^^
+  62 |   return (
+  63 |    <div className={styles.wrapper}>
+  64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+
+the name `PriceTable` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.928] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.928] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:00:54.928] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:03.277] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:03.299] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:03.303] Server  LOG     ✓ Compiled in 6ms
+[00:01:03.344] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:03.349] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:03.351] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:03.353] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:03.359] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:03.901] Browser ERROR   uncaughtError: Error: ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+
+[00:01:04.159] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:04.160] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:04.160] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:04.265] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:04.265] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:04.265] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:07.969] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:07.969] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:07.969] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:17.224] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:17.224] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:17.224] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:18.608] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:18.609] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:18.613] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:18.615] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:18.623] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:19.180] Browser ERROR   uncaughtError: Error: ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+
+[00:01:19.412] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:19.412] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:19.412] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:19.517] Browser ERROR   ./components/price/price_table.jsx:61:1
+Ecmascript file had an error
+  59 | }
+  60 |
+> 61 | export default function PriceTable() {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |   return (
+     | ^^^^^^^^^^
+> 63 |    <div className={styles.wrapper}>
+     | ^^^^^^^^^^
+> 64 |       <h3 className={styles.tableHeading}>Chương trình ưu đãi xe Omoda C5</h3>
+     | ^^^^^^^^^^
+> 65 |       <div className={styles.tableResponsive}>
+     | ^^^^^^^^^^
+> 66 |         <table className={styles.table}>
+     | ^^^^^^^^^^
+> 67 |           <thead>
+     | ^^^^^^^^^^
+> 68 |             <tr>
+     | ^^^^^^^^^^
+> 69 |               <th>PHIÊN BẢN</th>
+     | ^^^^^^^^^^
+> 70 |               <th>GIÁ BÁN SAU ƯU ĐÃI (VND)</th>
+     | ^^^^^^^^^^
+> 71 |             </tr>
+     | ^^^^^^^^^^
+> 72 |           </thead>
+     | ^^^^^^^^^^
+> 73 |           <tbody>
+     | ^^^^^^^^^^
+> 74 |             {pricingData.map((item, index) => (
+     | ^^^^^^^^^^
+> 75 |               <tr key={index}>
+     | ^^^^^^^^^^
+> 76 |                 <td className={styles.versionColumn}>{item.version}</td>
+     | ^^^^^^^^^^
+> 77 |                 <td>
+     | ^^^^^^^^^^
+> 78 |                   <div className={styles.priceRow}>
+     | ^^^^^^^^^^
+> 79 |                     <span className={styles.mainPrice}>{item.price}</span>
+     | ^^^^^^^^^^
+> 80 |                     <span className={styles.promoTag}>({item.promo})</span>
+     | ^^^^^^^^^^
+> 81 |                   </div>
+     | ^^^^^^^^^^
+> 82 |                   {item.details.map((detail, idx) => (
+     | ^^^^^^^^^^
+> 83 |                     <p key={idx} className={styles.subDetail}>{detail}</p>
+     | ^^^^^^^^^^
+> 84 |                   ))}
+     | ^^^^^^^^^^
+> 85 |                 </td>
+     | ^^^^^^^^^^
+> 86 |               </tr>
+     | ^^^^^^^^^^
+> 87 |             ))}
+     | ^^^^^^^^^^
+> 88 |           </tbody>
+     | ^^^^^^^^^^
+> 89 |         </table>
+     | ^^^^^^^^^^
+> 90 |       </div>
+     | ^^^^^^^^^^
+> 91 |     </div>
+     | ^^^^^^^^^^
+> 92 |   )
+     | ^^^^^^^^^^
+> 93 | }
+     | ^^
+  94 |
+
+the name `default` is exported multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:19.517] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:19.517] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:36.248] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:36.249] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:36.286] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:36.287] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:36.289] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:36.291] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:36.296] Server  ERROR   ⨯ ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:01:36.812] Browser ERROR   uncaughtError: Error: ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+
+[00:01:37.058] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:37.058] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:37.167] Browser ERROR   ./components/price/price_table.jsx:4:8
+Ecmascript file had an error
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    |        ^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+the name `styles` is defined multiple times
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+[00:01:37.167] Browser ERROR   ./components/price/price_table.jsx:4:1
+Module not found: Can't resolve './PriceTable.module.css'
+  2 | import styles from '../../styles/components/price_table.module.css'
+  3 |
+> 4 | import styles from './PriceTable.module.css';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const pricingData = [
+  7 |   {
+
+Import traces:
+  Browser:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+  SSR:
+    ./components/price/price_table.jsx
+    ./pages/price/index.jsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:01:49.249] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:49.250] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:49.283] Server  LOG     ✓ Compiled in 13ms
+[00:01:50.578] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/banner-tet.jpg" "received" null
+[00:02:05.609] Server  LOG     ✓ Compiled in 14ms
+[00:02:05.718] Browser LOG     Refreshing page data due to server-side change
+[00:02:56.371] Server  LOG     ✓ Compiled in 9ms
+[00:04:36.048] Server  LOG     ✓ Compiled in 340ms
+[00:04:41.386] Server  LOG     ✓ Compiled in 10ms
+[00:05:45.863] Server  LOG     ✓ Compiled in 18ms
+[00:06:00.774] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:06:17.421] Server  LOG     ✓ Compiled in 12ms
+[00:06:26.548] Server  LOG     ✓ Compiled in 10ms
+[00:06:30.561] Server  LOG     ✓ Compiled in 13ms
+[00:06:47.107] Server  LOG     ✓ Compiled in 10ms
+[00:07:05.826] Server  LOG     ✓ Compiled in 13ms
+[00:08:21.481] Server  LOG     ✓ Compiled in 12ms
+[00:09:26.340] Server  LOG     ✓ Compiled in 13ms
+[00:10:13.229] Server  LOG     ✓ Compiled in 10ms
+[00:11:14.987] Server  LOG     ✓ Compiled in 13ms
+[00:11:25.547] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:11:34.987] Server  LOG     ✓ Compiled in 10ms
+[00:11:44.719] Server  LOG     ✓ Compiled in 15ms
+[00:15:15.847] Server  LOG     ✓ Compiled in 12ms
+[00:15:33.816] Server  LOG     ✓ Compiled in 8ms
+[00:16:04.508] Server  LOG     ✓ Compiled in 7ms
+[00:17:44.582] Server  LOG     ✓ Compiled in 33ms
+[00:17:45.370] Browser LOG     Refreshing page data due to server-side change
+[00:18:29.860] Server  LOG     ✓ Compiled in 11ms
+[00:18:30.364] Browser LOG     Refreshing page data due to server-side change
+[00:18:59.077] Server  LOG     ✓ Compiled in 112ms
+[00:19:05.737] Server  LOG     ✓ Compiled in 8ms
+[00:19:33.614] Server  LOG     ✓ Compiled in 8ms
+[00:19:41.891] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:20:47.665] Server  LOG     ✓ Compiled in 19ms
+[00:21:00.901] Server  LOG     ✓ Compiled in 10ms
+[00:21:14.661] Server  LOG     ✓ Compiled in 9ms
+[00:22:30.641] Server  LOG     ✓ Compiled in 14ms
+[00:22:51.305] Server  LOG     ✓ Compiled in 14ms
+[00:23:19.598] Server  LOG     ✓ Compiled in 8ms
+[00:23:54.456] Server  LOG     ✓ Compiled in 13ms
+[00:23:58.569] Server  LOG     ✓ Compiled in 10ms
+[00:25:07.199] Server  LOG     ✓ Compiled in 14ms
+[00:25:25.194] Server  LOG     ✓ Compiled in 10ms
+[00:25:33.943] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -60,125 +3535,101 @@ It can also happen if the client has a browser extension installed which messes 
                               className="header-module__bEoNOa__search_container"
 -                             bis_skin_checked="1"
                             >
-                          ...
                 <main>
                   <Index>
-                    <Slider listSilder={[...]}>
-                      <div
-                        className="silder-module__7PWE7W__slider_wrapper"
-                        style={{maxHeight:550}}
--                       bis_skin_checked="1"
-                      >
-                        <div
-                          className="silder-module__7PWE7W__slider_container"
-                          style={{transform:"translateX..."}}
--                         bis_skin_checked="1"
-                        >
-                        <button>
-                        <button>
-                        <div
-                          className="silder-module__7PWE7W__pagination_dots"
--                         bis_skin_checked="1"
-                        >
                     <div
-                      className="index-module__LvwIca__content_main"
+                      className="price-module__8mBPDW__container"
 -                     bis_skin_checked="1"
                     >
-                      <ListItem_Main listData={[...]}>
-                        <div
-                          className={undefined}
--                         bis_skin_checked="1"
-                        >
-                          <h1>
-                          <div
-                            className="listItem_main-module__zFRpjq__car_grid"
--                           bis_skin_checked="1"
-                          >
-                      <RegisterForm>
-                        <div
-                          className="register_form-module__Ze0S5a__test_drive_container"
--                         bis_skin_checked="1"
-                        >
-                          <h1>
-                          <div
-                            className="register_form-module__Ze0S5a__hotline_wrapper"
--                           bis_skin_checked="1"
-                          >
-                            <div
-                              className="register_form-module__Ze0S5a__phone_icon"
--                             bis_skin_checked="1"
-                            >
-                            <div
-                              className="register_form-module__Ze0S5a__hotline_info"
--                             bis_skin_checked="1"
-                            >
-                          ...
-                        <div
-                          className="register_form-module__Ze0S5a__section_grid_container"
--                         bis_skin_checked="1"
-                        >
-                          <div
-                            className="register_form-module__Ze0S5a__promo_image_block"
--                           bis_skin_checked="1"
-                          >
-                            <div
-                              className="register_form-module__Ze0S5a__image_wrapper"
--                             bis_skin_checked="1"
-                            >
-                              <img>
-                              <div
-                                className="register_form-module__Ze0S5a__promo_badge_overlay"
--                               bis_skin_checked="1"
-                              >
-                                <div
-                                  className={undefined}
--                                 bis_skin_checked="1"
-                                >
-                                  <p>
-                                  <div
-                                    className="register_form-module__Ze0S5a__badge_details"
--                                   bis_skin_checked="1"
-                                  >
-                          <div
-                            className="register_form-module__Ze0S5a__registration_form_block"
--                           bis_skin_checked="1"
-                          >
-                            <h2>
-                            <form className={undefined} onSubmit={function onSubmit}>
-                              <div
-                                className="register_form-module__Ze0S5a__input_field_group"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="register_form-module__Ze0S5a__input_field_group"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="register_form-module__Ze0S5a__input_field_group"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="register_form-module__Ze0S5a__payment_options_group"
--                               bis_skin_checked="1"
-                              >
-                              ...
-                    <PromotionBanner>
+                      <header>
+                      <header>
                       <div
-                        className="promotion_banner-module__1BNJFG__banner_container"
+                        className="price-module__8mBPDW__bannerContainer"
 -                       bis_skin_checked="1"
                       >
-                        <div
-                          className="promotion_banner-module__1BNJFG__banner_content"
--                         bis_skin_checked="1"
-                        >
+                      <main className="price-modu...">
+                        <PriceTable item={{data:[...], ...}}>
                           <div
-                            className={undefined}
+                            className="price_table-module__83pUXa__wrapper"
 -                           bis_skin_checked="1"
                           >
+                            <h3>
+                            <div
+                              className={undefined}
+-                             bis_skin_checked="1"
+                            >
+                              <table className="price_tabl...">
+                                <thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                              <div
+                                className="price_table-module__83pUXa__imageContainer"
+-                               bis_skin_checked="1"
+                              >
+                        <PriceTable item={{data:[...], ...}}>
                           <div
-                            className={undefined}
+                            className="price_table-module__83pUXa__wrapper"
 -                           bis_skin_checked="1"
                           >
+                            <h3>
+                            <div
+                              className={undefined}
+-                             bis_skin_checked="1"
+                            >
+                              <table className="price_tabl...">
+                                <thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                                  <tr>
+                                    <td>
+                                    <td>
+                                      <div
+                                        className={undefined}
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                              <div
+                                className="price_table-module__83pUXa__imageContainer"
+-                               bis_skin_checked="1"
+                              >
                   ...
                 <Footer>
                   <footer className="footer-mod...">
@@ -227,337 +3678,173 @@ It can also happen if the client has a browser extension installed which messes 
                       >
             ...
 
-[00:00:13.913] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/3.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:25:33.943] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:13.913] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1
-[00:00:20.336] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:01:01.664] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:01.664] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769654109149-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:16.708] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769616005580-Screenshot%202026-01-01%20073003.png" 404
-[00:01:16.717] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769616297607-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" 404
-[00:01:16.767] Server  ERROR   Error: "url" parameter is valid but upstream response is invalid
-[00:01:16.768] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615734128-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" 404
-[00:01:16.771] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615758548-Screenshot%202026-01-01%20073003.png" 404
-[00:01:16.772] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+[00:26:33.462] Server  LOG     ✓ Compiled in 8ms
+[00:26:37.607] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:26:42.348] Server  LOG     ✓ Compiled in 9ms
+[00:26:44.778] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:26:48.163] Server  LOG     ✓ Compiled in 8ms
+[00:26:50.834] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:26:58.217] Server  LOG     ✓ Compiled in 5ms
+[00:27:06.841] Server  LOG     ✓ Compiled in 10ms
+[00:27:16.621] Server  LOG     ✓ Compiled in 11ms
+[00:27:53.545] Server  LOG     ✓ Compiled in 9ms
+[00:28:24.796] Server  LOG     ✓ Compiled in 8ms
+[00:28:51.036] Server  LOG     ✓ Compiled in 24ms
+[00:29:03.797] Server  LOG     ✓ Compiled in 10ms
+[00:29:44.175] Server  LOG     ✓ Compiled in 120ms
+[00:30:20.499] Server  LOG     ✓ Compiled in 25ms
+[00:30:33.802] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:33.802] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733670842-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:30:33.802] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:30:33.802] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:31:09.782] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:31:09.782] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:31:09.782] Browser ERROR   Image is missing required "src" property: <img>
+[00:31:09.782] Browser ERROR   Image is missing required "src" property: <img>
+[00:31:57.960] Server  LOG     ✓ Compiled in 68ms
+[00:32:06.349] Server  LOG     ✓ Compiled in 13ms
+[00:32:10.143] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733702759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:32:25.254] Server  LOG     ✓ Compiled in 16ms
+[00:32:49.032] Server  LOG     ✓ Compiled in 19ms
+[00:32:55.874] Server  LOG     ✓ Compiled in 19ms
+[00:33:01.052] Server  LOG     ✓ Compiled in 14ms
+[00:33:42.670] Server  LOG     ✓ Compiled in 15ms
+[00:33:45.954] Server  ERROR   PageNotFoundError: Cannot find module for page: /search
+[00:33:46.092] Browser ERROR   {"code":"MODULE_UNPARSABLE"}
+[00:33:46.214] Browser ERROR   unhandledRejection: Error: Could not parse module '[project]/pages/search/index.jsx', file not found
+[00:33:56.139] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:33:56.155] Server  LOG     ✓ Compiled in 13ms
+[00:33:58.196] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
 
 Check the render method of `SearchPage`. 
-[00:01:16.789] Server  ERROR   Error: "url" parameter is valid but upstream response is invalid
-[00:01:16.806] Server  ERROR   Error: "url" parameter is valid but upstream response is invalid
-[00:01:34.882] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769615758548-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:52.245] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:52.588] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769615758548-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:57.839] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769654109149-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+[00:33:58.196] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733702759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:33:58.672] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733682825-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:34:30.728] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:35:32.852] Server  LOG     ✓ Compiled in 35ms
+[00:37:07.522] Server  LOG     ✓ Compiled in 36ms
+[00:37:32.272] Server  LOG     ✓ Compiled in 14ms
+[00:37:44.926] Server  LOG     ✓ Compiled in 13ms
+[00:38:03.853] Server  LOG     ✓ Compiled in 9ms
+[00:39:42.819] Server  LOG     ✓ Compiled in 37ms
+[00:39:42.929] Browser ERROR   ./styles/news_deatail.module.css
+Transforming CSS failed
+Selector "container" is not pure. Pure selectors must contain at least one local class or id.
+
+Import traces:
+  Browser:
+    ./styles/news_deatail.module.css
+    ./pages/news/[slug].jsx
+
+  SSR:
+    ./styles/news_deatail.module.css
+    ./pages/news/[slug].jsx
+[00:39:48.785] Server  LOG     ✓ Compiled in 13ms
+[00:40:02.019] Server  LOG     ✓ Compiled in 16ms
+[00:40:23.165] Server  LOG     ✓ Compiled in 13ms
+[00:40:48.356] Server  LOG     ✓ Compiled in 13ms
+[00:41:00.204] Server  LOG     ✓ Compiled in 10ms
+[00:41:17.708] Server  LOG     ✓ Compiled in 16ms
+[00:41:22.621] Server  LOG     ✓ Compiled in 14ms
+[00:41:35.951] Server  LOG     ✓ Compiled in 14ms
+[00:41:50.544] Server  LOG     ✓ Compiled in 16ms
+[00:41:56.601] Server  LOG     ✓ Compiled in 9ms
+[00:42:06.239] Server  LOG     ✓ Compiled in 13ms
+[00:42:36.220] Server  LOG     ✓ Compiled in 14ms
+[00:42:39.769] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:42:40.028] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733702759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:42:55.472] Server  LOG     ✓ Compiled in 9ms
+[00:42:58.555] Server  LOG     ✓ Compiled in 8ms
+[00:43:00.166] Server  LOG     ✓ Compiled in 13ms
+[00:43:05.418] Server  LOG     ✓ Compiled in 15ms
+[00:43:09.659] Server  LOG     ✓ Compiled in 12ms
+[00:43:11.570] Server  LOG     ✓ Compiled in 10ms
+[00:43:35.247] Server  LOG     ✓ Compiled in 13ms
+[00:44:20.384] Server  LOG     ✓ Compiled in 17ms
+[00:44:29.422] Server  LOG     ✓ Compiled in 15ms
+[00:44:54.079] Server  LOG     ✓ Compiled in 24ms
+[00:46:24.987] Server  LOG     ✓ Compiled in 24ms
+[00:46:52.838] Server  LOG     ✓ Compiled in 17ms
+[00:47:04.074] Server  LOG     ✓ Compiled in 16ms
+[00:47:04.153] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[00:47:12.048] Server  LOG     ✓ Compiled in 22ms
+[00:47:23.077] Server  LOG     ✓ Compiled in 17ms
+[00:48:13.402] Server  LOG     ✓ Compiled in 63ms
+[00:48:14.373] Browser ERROR   ./styles/components/header.module.css
+Transforming CSS failed
+Selector "button[type="submit"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  SSR:
+    ./styles/components/header.module.css
+    ./components/header.jsx
+    ./layouts/mainLayout.jsx
+    ./pages/_app.jsx
+[00:48:14.373] Browser ERROR   ./styles/components/header.module.css
+Transforming CSS failed
+Selector "input[type="search"]" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  SSR:
+    ./styles/components/header.module.css
+    ./components/header.jsx
+    ./layouts/mainLayout.jsx
+    ./pages/_app.jsx
+[00:48:14.373] Browser ERROR   ./styles/components/header.module.css
+Transforming CSS failed
+Selector "search" is not pure. Pure selectors must contain at least one local class or id.
+
+Import trace:
+  SSR:
+    ./styles/components/header.module.css
+    ./components/header.jsx
+    ./layouts/mainLayout.jsx
+    ./pages/_app.jsx
+[00:48:59.184] Server  LOG     ✓ Compiled in 22ms
+[00:49:34.877] Server  LOG     ✓ Compiled in 65ms
+[00:49:59.810] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
 
 Check the render method of `SearchPage`. 
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769655691759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769659020395-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769621389409-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769616297607-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769616005580-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:17.983] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769615734128-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:20.352] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769658989766-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:20.352] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769615721611-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:47.837] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615772271-Screenshot%202026-01-01%20073003.png" 404
-[00:03:47.848] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615781041-Screenshot%202026-01-01%20073003.png" 404
-[00:03:48.003] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769653952556-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:48.204] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769653967282-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:56.994] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:04:02.109] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615772271-Screenshot%202026-01-01%20073003.png" 404
-[00:04:02.110] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615781041-Screenshot%202026-01-01%20073003.png" 404
-[00:07:17.959] Server  LOG     ✓ Compiled in 94ms
-[00:07:17.968] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615772271-Screenshot%202026-01-01%20073003.png" 404
-[00:07:25.328] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:07:56.358] Server  LOG     ✓ Compiled in 75ms
-[00:08:02.745] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:08:07.620] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
+[00:50:29.196] Server  LOG     ✓ Compiled in 14ms
+[00:50:41.340] Server  LOG     ✓ Compiled in 13ms
+[00:51:22.924] Server  LOG     ✓ Compiled in 28ms
+[00:51:58.614] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:51:58.614] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733670842-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:51:58.614] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:51:58.614] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:52:01.414] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:52:01.414] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:52:01.414] Browser ERROR   Image is missing required "src" property: <img>
+[00:52:01.414] Browser ERROR   Image is missing required "src" property: <img>
+[00:52:22.111] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733682825-Screenshot 2026-01-01 073003.png" has legacy prop "objectFit". Did you forget to run the codemod?
 Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-[00:08:07.620] Browser WARN    Image with src "https://omodajaecoohcm.vn/wp-content/uploads/2026/01/1.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:08:10.526] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:08:17.660] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:08:20.313] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615772271-Screenshot%202026-01-01%20073003.png" 404
-[00:08:20.324] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615781041-Screenshot%202026-01-01%20073003.png" 404
-[00:08:20.417] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769653952556-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:08:20.417] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769653967282-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:09:27.817] Server  LOG     ✓ Compiled in 21ms
-[00:09:27.832] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615772271-Screenshot%202026-01-01%20073003.png" 404
-[00:09:33.286] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:10:04.001] Server  LOG     ✓ Compiled in 18ms
-[00:10:04.439] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769658989766-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:10:10.032] Server  LOG     ✓ Compiled in 15ms
-[00:10:21.569] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <Container fn={function fn}>
-      <PagesDevOverlayBridge>
-        <PagesDevOverlayErrorBoundary>
-          <PathnameContextProviderAdapter router={{sdc:{},sbc:{}, ...}} isAutoExport={true}>
-            <App pageProps={{}} Component={function ProuctDetail} err={undefined} router={{sdc:{},sbc:{}, ...}}>
-              <MainLayout suppressHydrationWarning={true}>
-                <Header>
-                  <header className="header-mod...">
-                    <div
-                      className="header-module__bEoNOa__header_container"
--                     bis_skin_checked="1"
-                    >
-                      <div
-                        className="header-module__bEoNOa__logo_section"
-                        onClick={function onClick}
--                       bis_skin_checked="1"
-                      >
-                      <nav>
-                      <div
-                        className="header-module__bEoNOa__section_header_left"
--                       bis_skin_checked="1"
-                      >
-                        <div
-                          className="header-module__bEoNOa__mobile_toggle"
-                          onClick={function onClick}
--                         bis_skin_checked="1"
-                        >
-                          <div
-                            className={"header-module__bEoNOa__bar "}
--                           bis_skin_checked="1"
-                          >
-                          <div
-                            className={"header-module__bEoNOa__bar "}
--                           bis_skin_checked="1"
-                          >
-                          <div
-                            className={"header-module__bEoNOa__bar "}
--                           bis_skin_checked="1"
-                          >
-                        <form onSubmit={function onSubmit}>
-                          <div
-                            className="header-module__bEoNOa__search_wrapper"
--                           bis_skin_checked="1"
-                          >
-                            <div
-                              className="header-module__bEoNOa__search_container"
--                             bis_skin_checked="1"
-                            >
-                          ...
-                <main>
-                  <ProuctDetail>
-                    <div
-                      className="product_detail-module__29RdiW__product_detail_container"
--                     bis_skin_checked="1"
-                    >
-                      <div
-                        className="product_detail-module__29RdiW__product_grid"
--                       bis_skin_checked="1"
-                      >
-                        <div
-                          className="product_detail-module__29RdiW__image_gallery_column"
--                         bis_skin_checked="1"
-                        >
-                          <div
-                            className="product_detail-module__29RdiW__discount_badge"
--                           bis_skin_checked="1"
-                          >
-+                           Giảm giá!
-                          <div
-                            className="product_detail-module__29RdiW__main_image_wrapper"
--                           bis_skin_checked="1"
-                          >
-                            <Slider size={300} listString={[...]} index={0}>
-                              <div
-                                className="silder-module__7PWE7W__slider_wrapper"
-                                style={{maxHeight:300}}
--                               bis_skin_checked="1"
-                              >
-                                <div
-                                  className="silder-module__7PWE7W__slider_container"
-                                  style={{transform:"translateX..."}}
--                                 bis_skin_checked="1"
-                                >
-                                <button>
-                                <button>
-                                <div
-                                  className="silder-module__7PWE7W__pagination_dots"
--                                 bis_skin_checked="1"
-                                >
-                            <div
-                              className="product_detail-module__29RdiW__zoom_icon"
--                             bis_skin_checked="1"
-                            >
-                          <div
-                            className="product_detail-module__29RdiW__thumbnail_gallery"
--                           bis_skin_checked="1"
-                          >
-                        <div
-                          className={undefined}
--                         bis_skin_checked="1"
-                        >
-                          <p>
-                          <h1>
-                          <div
-                            className="product_detail-module__29RdiW__price_section"
--                           bis_skin_checked="1"
-                          >
-                          <div
-                            className="product_detail-module__29RdiW__promotion_box"
--                           bis_skin_checked="1"
-                          >
-                          <div
-                            className="product_detail-module__29RdiW__action_buttons"
--                           bis_skin_checked="1"
-                          >
-                      <div
-                        className={undefined}
--                       bis_skin_checked="1"
-                      >
-                        <Tabs activeTab={false} func={function func}>
-                          <div
-                            className="tabs-module__B1_CLq__tabs_container"
--                           bis_skin_checked="1"
-                          >
-                            <ul>
-                            <div
-                              className="tabs-module__B1_CLq__tab_content"
--                             bis_skin_checked="1"
-                            >
-                              <div
-                                className={undefined}
--                               bis_skin_checked="1"
-                              >
-                        <Specifications silder={[...]}>
-                          <section>
-                            <Slider listString={[...]}>
-                              <div
-                                className="silder-module__7PWE7W__slider_wrapper"
-                                style={{maxHeight:550}}
--                               bis_skin_checked="1"
-                              >
-                                <div
-                                  className="silder-module__7PWE7W__slider_container"
-                                  style={{transform:"translateX..."}}
--                                 bis_skin_checked="1"
-                                >
-                                <button>
-                                <button>
-                                <div
-                                  className="silder-module__7PWE7W__pagination_dots"
--                                 bis_skin_checked="1"
-                                >
-                            <h4>
-                            <div
-                              className="specifications-module__gOHTiG__stats_container"
--                             bis_skin_checked="1"
-                            >
-                              <div
-                                className="specifications-module__gOHTiG__stat_box"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="specifications-module__gOHTiG__stat_box"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="specifications-module__gOHTiG__stat_box"
--                               bis_skin_checked="1"
-                              >
-                              <div
-                                className="specifications-module__gOHTiG__stat_box"
--                               bis_skin_checked="1"
-                              >
-                            <div
-                              className="specifications-module__gOHTiG__desc_section"
--                             bis_skin_checked="1"
-                            >
-                        <ImageSection item={{title:"", ...}}>
-                          <section className="imageSecti...">
-                            <div
-                              className="imageSection-module__4t57Ja__header_section"
--                             bis_skin_checked="1"
-                            >
-                            <div
-                              className="imageSection-module__4t57Ja__main_image_wrapper"
--                             bis_skin_checked="1"
-                            >
-                              <div
-                                className={" ImageNext-module__K4LsuG__image_container"}
--                               bis_skin_checked="1"
-                              >
-                            <div
-                              className="imageSection-module__4t57Ja__features_grid"
--                             bis_skin_checked="1"
-                            >
-                  ...
-                <Footer>
-                  <footer className="footer-mod...">
-                    <div
-                      className="footer-module__pYvrhG__footer_content"
--                     bis_skin_checked="1"
-                    >
-                      <div
-                        className={[...]}
--                       bis_skin_checked="1"
-                      >
-                        <h3>
-                        <div
-                          className="footer-module__pYvrhG__map_wrapper"
--                         bis_skin_checked="1"
-                        >
-                      <div
-                        className="footer-module__pYvrhG__footer_column  footer-module__pYvrhG__info_section"
--                       bis_skin_checked="1"
-                      >
-                      <div
-                        className={[...]}
--                       bis_skin_checked="1"
-                      >
-                        <h3>
-                        <div
-                          className="footer-module__pYvrhG__social_icons"
--                         bis_skin_checked="1"
-                        >
-                    <div
-                      className="footer-module__pYvrhG__footer_bottom"
--                     bis_skin_checked="1"
-                    >
-                      <div
-                        className={undefined}
--                       bis_skin_checked="1"
-                      >
-                        <div
-                          className="footer-module__pYvrhG__footer_nav"
--                         bis_skin_checked="1"
-                        >
-                        ...
-                      <div
-                        className="footer-module__pYvrhG__bottom_right"
--                       bis_skin_checked="1"
-                      >
-            ...
-
-[00:10:21.624] Server  ERROR   ⨯ "upstream image response failed for" "http://103.15.51.2:4000/uploads/1769615721611-Screenshot%202026-01-01%20073003.png" 404
-[00:12:42.563] Server  LOG     ✓ Compiled in 169ms
-[00:12:43.431] Browser LOG     Refreshing page data due to server-side change
-[00:12:50.330] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769615721611-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:05.154] Server  LOG     ✓ Compiled in 168ms
-[00:13:05.437] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769658989766-Screenshot 2026-01-01 073003.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:13:05.437] Browser LOG     Refreshing page data due to server-side change
-[00:13:38.073] Server  LOG     ✓ Compiled in 29ms
-[00:13:38.439] Browser LOG     Refreshing page data due to server-side change
-[00:14:05.178] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769659020395-Screenshot 2026-01-01 073003.png" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-[00:14:05.178] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. borderRadius borderradius
-[00:14:05.178] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769655691759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
-Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-[00:14:05.285] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769659020395-Screenshot 2026-01-01 073003.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:52:22.111] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. borderRadius borderradius
+[00:52:22.111] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733682825-Screenshot 2026-01-01 073003.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:14:06.328] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769652538055-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
+[00:52:27.876] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733670842-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:52:27.876] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:53:23.720] Server  LOG     ✓ Compiled in 10ms
+[00:53:28.620] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:53:28.620] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:53:28.620] Browser ERROR   Image is missing required "src" property: <img>
+[00:53:28.620] Browser ERROR   Image is missing required "src" property: <img>
+[00:53:30.419] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:53:30.419] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:53:30.419] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733693759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:53:30.419] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733670842-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:54:43.504] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733682825-Screenshot 2026-01-01 073003.png" has legacy prop "objectFit". Did you forget to run the codemod?
 Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
-[00:14:06.328] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769652741684-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
+[00:54:43.504] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. borderRadius borderradius
+[00:54:43.504] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733682825-Screenshot 2026-01-01 073003.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:55:38.866] Server  LOG     ✓ Compiled in 97ms
+[00:57:17.140] Server  LOG     ✓ Compiled in 181ms
+[01:06:34.157] Browser WARN    Image with src "/_next/static/media/default-placeholder.a0b64235.png" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+[01:06:34.158] Browser WARN    Image with src "http://103.15.51.2:4000/uploads/1769733702759-gen-n-z7317171060339_f0680f49028803fd3792714d3e7ad11b.jpg" has legacy prop "objectFit". Did you forget to run the codemod?
 Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
