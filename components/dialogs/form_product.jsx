@@ -41,13 +41,15 @@ const mockdata = {
   galleryImages: [],
   detailBlocks: [],
   variants: [],
+  promotionHome: "Thông tin khuyến mãi tại trang chủ",
+  descriptionShort: "Mô tả ngắn về sản phẩm",
   specs: [
     { label: "Công suất", value: "0" },
     { label: "Quãng đường", value: "0" },
     { label: "Tốc độ tối đa", value: "0" },
     { label: "Tốc độ tối đa", value: "0" },
   ],
-  descriptionShort: "Mô tả ngắn về sản phẩm",
+
   promotion: "Đây là miêu tả khuyến mãi",
   createdAt: "",
   updatedAt: "",
@@ -241,6 +243,7 @@ const CreateProduct_Dialog = ({
 
     let result;
     if (editForm && item) {
+      console.log(formData);
       result = fetch(`${BE_URL}/products/${item.slug}`, {
         method: "PUT",
         body: JSON.stringify({
@@ -430,7 +433,9 @@ const CreateProduct_Dialog = ({
               </div>
 
               <div className={styles.variants_section}>
-                <h3 className={styles.promo_title}>Bảng giá xe ô tô {formData.name} SAU ƯU ĐÃI</h3>
+                <h3 className={styles.variants_title}>
+                  Bảng giá xe ô tô {formData.name} <span>SAU ƯU ĐÃI</span>
+                </h3>
                 <div className={styles.variants_list}>
                   <ul className={styles.variants_ul}>
                     {formData.variants.map((variant_item, index) => (
@@ -548,6 +553,17 @@ const CreateProduct_Dialog = ({
           </div>
 
           <div className={styles.product_depscription}>
+            <div className={styles.promotion_box}>
+              <h3 className={styles.promo_title}>
+                <InlineEdit
+                  value={formData.promotionHome}
+                  variant="span"
+                  sx={{ fontSize: 15 }}
+                  onSave={(val) => handleUpdate("promotionHome", val)}
+                />
+              </h3>
+            </div>
+
             <Tabs
               activeTab={activeTab}
               func={() => setActiveTab((pre) => !pre)}
@@ -556,8 +572,10 @@ const CreateProduct_Dialog = ({
             <Specifications_Create
               silder={Array.from(formData.galleryImages)}
               data={formData}
-              handleUpdateSpecs={(field, newValue, index)=>handleUpdateSpecs(field, newValue, index)}
-              handleUpdateDeps={(val)=>handleUpdate("descriptionShort", val)}
+              handleUpdateSpecs={(field, newValue, index) =>
+                handleUpdateSpecs(field, newValue, index)
+              }
+              handleUpdateDeps={(val) => handleUpdate("descriptionShort", val)}
             />
             {formData.detailBlocks.map((value, index) => (
               <ImageSection_Create

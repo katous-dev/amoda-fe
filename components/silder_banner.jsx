@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/components/silder_banner.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -6,7 +6,7 @@ import imageDefault from "../public/image/default-placeholder.png";
 
 const BannerSlider = ({ data = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [listBanner, setListBanner] = useState(data);
+  const listBanner = useMemo(()=>{return data},[data])
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -20,17 +20,13 @@ const BannerSlider = ({ data = [] }) => {
     );
   };
 
-  useEffect(() => {
-    setListBanner(data);
-  }, [data]);
-
   return (
     <section className={styles.bannerWrapper}>
       <div
         className={styles.sliderContent}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {data.map((banner) => (
+        {listBanner.map((banner) => (
           <div key={banner._id} className={styles.bannerItem}>
             <Image
               src={banner.imgLink || imageDefault}

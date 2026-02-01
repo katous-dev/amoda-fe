@@ -138,12 +138,12 @@ const Header = () => {
                   value={search_text}
                   onChange={(e) => setSearch_text(e.target.value)}
                 />
-                <div className={styles.icon_box}>
+                <button className={styles.icon_box} type="submit">
                   <IoSearchOutline size={22} className={styles.search_icon} />
-                </div>
+                </button>
 
                 <button type="submit" style={{ display: "none" }}></button>
-              </div>
+              </div> 
             </div>
           </form>
         </div>

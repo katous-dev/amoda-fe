@@ -61,7 +61,6 @@ export default function Index() {
       <div className={styles.content_main}>
         <ListItem_Main listData={listProduct} />
         <RegisterForm />
-       
       </div> 
       <NewsSection/>
       <PromotionBanner />

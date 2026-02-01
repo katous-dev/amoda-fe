@@ -18,8 +18,12 @@ export default function Specifications_Create({
   silder = [],
   data = mockData,
   handleUpdateSpecs = () => {},
+  handleUpdateDeps = ()=>{}
 }) {
   const formdata = useMemo(() => {
+    if(data.specs.length == 0){
+        return {...data, specs:[...mockData.specs]}
+    }
     return data;
   }, [data]);
 
@@ -45,6 +49,7 @@ export default function Specifications_Create({
                 value={item.label}
                 variant="span"
                 sx={{ fontWeight: "bold", mb: 1 }}
+                convertNumber={false}
                 onSave={(val) => handleUpdateSpecs("label", val, index)}
               />
             </span>
@@ -57,7 +62,7 @@ export default function Specifications_Create({
           value={formdata.descriptionShort}
           variant="p"
           sx={{ mb: 1 }}
-          onSave={(val) => {}}
+          onSave={(val) => {handleUpdateDeps(val)}}
         />
       </div>
     </section>

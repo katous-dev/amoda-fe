@@ -133,7 +133,7 @@ export default function Banner() {
       })
         .then((res) => {
           if (!res.ok) {
-            toast.error("Lỗi khi xóa banner");
+            toast.error("Lỗi khi xóa banner, vui lòng đăng nhập lại!");
             return;
           }
           toast.success("Xóa banner thành công");

@@ -76,8 +76,6 @@ export default function ProductTable() {
             sx={{
               borderRadius: 2,
               textTransform: "none",
-              // bgcolor: "#635BFF",
-              // "&:hover": { bgcolor: "#5249f0" },
               minWidth: { xs: "100%", md: "auto" },
               
             }}
@@ -93,8 +91,6 @@ export default function ProductTable() {
             sx={{
               borderRadius: 2,
               textTransform: "none",
-              bgcolor: "#ff3231",
-              "&:hover": { bgcolor: "#d50808" },
               minWidth: { xs: "100%", md: "auto" },
             }}
             className="btn-red"> 
@@ -128,17 +124,21 @@ export default function ProductTable() {
   }, []);
 
   const handleDelete = (slug) => {
+    
     if (openDelete.open) {
       if (!slug) return;
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+
+       myHeaders.append(
+      "Authorization",
+      "Bearer " + localStorage.getItem("accessToken"),
+    );
       fetch(`${BE_URL}/products/${slug}`, {
         method: "DELETE",
         headers: myHeaders,
       })
         .then((res) => {
           if (!res.ok) {
-            toast.error("Lỗi khi xóa sản phẩm");
+            toast.error("Lỗi khi xóa sản phẩm, vui lòng đăng nhập lại!");
             return;
           }
           toast.success("Xóa sản phẩm thành công");
@@ -201,7 +201,7 @@ export default function ProductTable() {
               bgcolor: "white",
               borderRadius: 2,
               width: { md: 300 },
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#E0E4EC" },
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "var(--button-border)" },
             }}
             InputProps={{
               startAdornment: (
@@ -219,8 +219,8 @@ export default function ProductTable() {
             sx={{
               borderRadius: 2,
               textTransform: "none",
-              color: "#333",
-              borderColor: "#E0E4EC",
+              color: 'var(--button-color)',
+              borderColor: 'var(--button-border)',
             }}
           >
             Lọc

@@ -168,7 +168,7 @@ export default function NewsTable() {
       })
         .then((res) => {
           if (!res.ok) {
-            toast.error("Lỗi khi xóa tin tức");
+            toast.error("Lỗi khi xóa tin tức, vui lòng đăng nhập lại!");
             return;
           }
           toast.success("Xóa tin tức thành công");
@@ -205,7 +205,7 @@ export default function NewsTable() {
               bgcolor: "white",
               borderRadius: 2,
               width: { md: 300 },
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#E0E4EC" },
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: 'var(--button-border)' },
             }}
             InputProps={{
               startAdornment: (
@@ -223,8 +223,8 @@ export default function NewsTable() {
             sx={{
               borderRadius: 2,
               textTransform: "none",
-              color: "#333",
-              borderColor: "#E0E4EC",
+              color: 'var(--button-color)',
+              borderColor: 'var(--button-border)',
             }}
           >
             Lọc

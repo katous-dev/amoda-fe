@@ -73,6 +73,7 @@ const mockData = {
   detailBlocks: [detailBlock],
   variants: [],
   galleryImages: [],
+  specs:[],
   name: "",
   price: 0,
   slug: "",
@@ -180,8 +181,8 @@ export default function ProuctDetail() {
           </div>
 
           <div className={styles.variants_section}>
-            <h3 className={styles.promo_title}>
-              Bảng giá xe ô tô {currentProduct.name} SAU ƯU ĐÃI
+            <h3 className={styles.variants_title}>
+              Bảng giá xe ô tô {currentProduct.name} <span>SAU ƯU ĐÃI</span>
             </h3>
             <div className={styles.variants_list}>
               <ul className={styles.variants_ul}>
@@ -241,7 +242,7 @@ export default function ProuctDetail() {
 
       <div className={styles.product_depscription}>
         <Tabs activeTab={activeTab} func={() => setActiveTab((pre) => !pre)} />
-        <Specifications silder={currentProduct.galleryImages} />
+        <Specifications silder={currentProduct.galleryImages} data={currentProduct}/>
         {currentProduct.detailBlocks.map((value, index) => (
           <ImageSection key={index} item={value} />
         ))}

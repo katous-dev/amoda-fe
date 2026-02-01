@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/components/listItem_main.module.css";
 import { formatNumber } from "../utils/formartNumber";
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

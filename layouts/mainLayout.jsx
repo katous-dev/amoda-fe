@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import { useEffect, useState } from "react";
 import ContactFloats from "../components/dialogs/float_button";
-import FormRegister from "../components/dialogs/form_register";
+import FormBuyCar from "../components/dialogs/form_buy_car";
 
 const deny = ["admin", "login"];
 
@@ -44,7 +44,7 @@ export default function MainLayout({ children }) {
       <main>{children}</main>
       {!hidden && <ContactFloats/>}
       {!hidden && <Footer />}
-      {!hidden && <FormRegister open={openForm} handleClose={()=>setOpenForm(false)}/>}
+      {!hidden && <FormBuyCar open={openForm} handleClose={()=>setOpenForm(false)}/>}
     </>
   );
 }
