@@ -50,9 +50,9 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <div className={styles.loginCard}>
-        <h1 className={styles.title}>Sign In</h1>
+        <h1 className={styles.title}>Đăng nhập</h1>
         <p className={styles.subtitle}>
-          Enter your credentials to access your account
+          Nhập thông tin đăng nhập của bạn
         </p>
 
         <form className={styles.form} onSubmit={handleLogin}>
@@ -60,7 +60,7 @@ const Login = () => {
             <div className={styles.passwordWrapper}>
               <input
                 type="email"
-                placeholder="Email Address"
+                placeholder="Email "
                 className={styles.input}
                 required
                 value={formData.email}
@@ -70,8 +70,8 @@ const Login = () => {
               />
               <button
                 type="button"
-                className={styles.eyeIcon}
-                color="#000"
+                className={`${styles.eyeIcon} btn-primary`}
+                
                 onClick={handleSendOtp}
               >
                 Gửi mã
@@ -98,7 +98,7 @@ const Login = () => {
             type="submit"
             className={`${styles.signInBtn} ${formData.otp == "" && styles.disable_btn}`}
           >
-            Sign In
+            Xác nhận
           </button>
         </form>
       </div>

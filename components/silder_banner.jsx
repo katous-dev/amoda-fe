@@ -1,35 +1,39 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from '../styles/components/silder_banner.module.css';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import styles from "../styles/components/silder_banner.module.css";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import imageDefault from "../public/image/default-placeholder.png";
 
-const BannerSlider = ({ data }) => {
+const BannerSlider = ({ data = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  if (!data || data.length === 0) return null;
+  const [listBanner, setListBanner] = useState(data);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === data.length - 1 ? 0 : prevIndex + 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === data.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? data.length - 1 : prevIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? data.length - 1 : prevIndex - 1,
     );
   };
 
+  useEffect(() => {
+    setListBanner(data);
+  }, [data]);
+
   return (
     <section className={styles.bannerWrapper}>
-      <div 
-        className={styles.sliderContent} 
+      <div
+        className={styles.sliderContent}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {data.map((banner) => (
           <div key={banner._id} className={styles.bannerItem}>
             <Image
-              src={banner.imgLink || '/placeholder-banner.jpg'}
+              src={banner.imgLink || imageDefault}
               alt={banner.nameTitle}
               fill
               priority={banner.order === 1}
@@ -40,7 +44,6 @@ const BannerSlider = ({ data }) => {
         ))}
       </div>
 
-      {/* Nút điều hướng */}
       <button className={`${styles.navBtn} ${styles.prev}`} onClick={prevSlide}>
         <IoIosArrowBack />
       </button>
@@ -48,11 +51,10 @@ const BannerSlider = ({ data }) => {
         <IoIosArrowForward />
       </button>
 
-      {/* Phân trang */}
       <div className={styles.pagination}>
         {data.map((_, index) => (
-          <span 
-            key={index} 
+          <span
+            key={index}
             className={currentIndex === index ? styles.dotActive : styles.dot}
             onClick={() => setCurrentIndex(index)}
           ></span>

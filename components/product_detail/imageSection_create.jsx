@@ -31,7 +31,7 @@ const mockformData = {
 export default function ImageSection_Create({
   data = mockData,
   formData = mockformData,
-  handleUpdate = () => {},
+
   handleDelete = () => {},
   handleCreateChildSection = () => {},
   handleImageChildSection = () => {},
@@ -104,14 +104,17 @@ export default function ImageSection_Create({
           <Image
             width={1000}
             height={1000}
-            src={bigData.avatarImage || defaultImage}
+            src={formDataSection.images[0] || defaultImage}
             alt="Nội thất Omoda C5"
             objectFit="cover"
           />
         </div>
         <input
           onChange={(e) =>
-            handleUpdate(e.target.files.length != 0 ? e.target.files[0] : "")
+           handleImageChildSection(
+              e.target.files.length != 0 ? e.target.files[0] : null,
+              true
+            )
           }
           style={{ display: "none" }}
           type="file"
@@ -122,11 +125,12 @@ export default function ImageSection_Create({
 
       <div className={styles.features_grid}>
         {formDataSection.images.map((img, index) => {
+          if (index === 0) return null; 
           return (
             <div
               key={index}
               className={styles.feature_item}
-              style={{ position: "relative" }} // Đảm bảo div cha có relative
+              style={{ position: "relative" }} 
             >
               <div
                 className={`${styles.image_box} ${styles_image.image_container}`}

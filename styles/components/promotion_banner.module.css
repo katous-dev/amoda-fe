@@ -1,11 +1,9 @@
 .banner_container {
-  margin-top: 60px;
   background-color: #e0e0e0; 
   padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center; 
-  /* height: 100%; */
 }
 
 .banner_content {

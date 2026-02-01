@@ -10,6 +10,8 @@ import {
   useMediaQuery,
   useTheme,
   Box,
+  TextField,
+  Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { AiOutlineZoomIn } from "react-icons/ai";
@@ -23,12 +25,12 @@ import Tabs from "../product_detail/tabs";
 import Specifications_Create from "../product_detail/specifications_create";
 import ImageSection_Create from "../product_detail/imageSection_create";
 import { toast } from "react-toastify";
+import { formatNumber } from "../../utils/formartNumber";
+import { CiCircleRemove } from "react-icons/ci";
 
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-
-
 
 const mockdata = {
   name: "Tên sản phẩm",
@@ -38,6 +40,14 @@ const mockdata = {
   avatarImage: "",
   galleryImages: [],
   detailBlocks: [],
+  variants: [],
+  specs: [
+    { label: "Công suất", value: "0" },
+    { label: "Quãng đường", value: "0" },
+    { label: "Tốc độ tối đa", value: "0" },
+    { label: "Tốc độ tối đa", value: "0" },
+  ],
+  descriptionShort: "Mô tả ngắn về sản phẩm",
   promotion: "Đây là miêu tả khuyến mãi",
   createdAt: "",
   updatedAt: "",
@@ -63,6 +73,8 @@ const CreateProduct_Dialog = ({
   const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const [indexImage, setIndexImage] = useState(0);
   const [formData, setFormData] = useState(mockdata);
+  const [variantItem, setVariantItem] = useState({ name: "", price: "" });
+  const [openFormVariant, setOpenFormVariant] = useState(false);
 
   useEffect(() => {
     if (item && editForm) {
@@ -70,8 +82,18 @@ const CreateProduct_Dialog = ({
       setFormData(item);
     }
   }, [item]);
+
   const handleUpdate = (field, newValue) => {
     setFormData((pre) => ({ ...pre, [field]: newValue }));
+  };
+
+  const handleUpdateSpecs = (field, newValue, index) => {
+    setFormData((pre) => ({
+      ...pre,
+      specs: pre.specs.map((item, i) =>
+        i === index ? { ...item, [field]: newValue } : item,
+      ),
+    }));
   };
 
   const updateDetailBlock = (index, field, newValue) => {
@@ -100,18 +122,42 @@ const CreateProduct_Dialog = ({
     }));
   };
 
-  const handleAddFeature = (currnetIndex, value = "") => {
-    setFormData((prev) => ({
-      ...prev,
-      detailBlocks: prev.detailBlocks.map((section, index) =>
-        currnetIndex == index
-          ? {
-              ...section,
-              images: [...section.images.filter((value) => value != ""), value],
-            }
-          : section,
-      ),
-    }));
+  const handleAddFeature = (
+    currnetIndex,
+    value = "",
+    bigImageSection = false,
+  ) => {
+    if (bigImageSection) {
+      setFormData((prev) => ({
+        ...prev,
+        detailBlocks: prev.detailBlocks.map((section, index) =>
+          currnetIndex == index
+            ? {
+                ...section,
+                images: [
+                  value,
+                  ...section.images.filter((value) => value != "").slice(1),
+                ],
+              }
+            : section,
+        ),
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        detailBlocks: prev.detailBlocks.map((section, index) =>
+          currnetIndex == index
+            ? {
+                ...section,
+                images: [
+                  ...section.images.filter((value) => value != ""),
+                  value,
+                ],
+              }
+            : section,
+        ),
+      }));
+    }
   };
 
   const handleRemoveImageChile = (sectionIndex, imageIndex) => {
@@ -158,32 +204,11 @@ const CreateProduct_Dialog = ({
       });
   };
 
-  const handleBigImage = (file) => {
-    const formData = new FormData();
-    formData.append("image", file);
-    fetch(`${BE_URL}/uploads/image`, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("accessToken"),
-      },
-    })
-      .then((res) => {
-        if (!res.ok) toast.error("Lỗi tải ảnh");
-        return res.json();
-      })
-      .then((res) => {
-        if (!res?.urls || !res.urls[0]?.url || !res) {
-          toast.error("Không tìm thấu url ");
-        }
-        setFormData((pre) => ({
-          ...pre,
-          avatarImage: res.urls[0].url,
-        }));
-      });
-  };
-
-  const handleImageChildSection = (file, sectionIndex) => {
+  const handleImageChildSection = (
+    file,
+    sectionIndex,
+    bigImageSection = false,
+  ) => {
     if (!file) return;
     const formData = new FormData();
     formData.append("image", file);
@@ -202,7 +227,7 @@ const CreateProduct_Dialog = ({
         if (!res?.urls || !res.urls[0]?.url || !res) {
           toast.error("Không tìm thấu url ");
         }
-        handleAddFeature(sectionIndex, res.urls[0].url);
+        handleAddFeature(sectionIndex, res.urls[0].url, bigImageSection);
       });
   };
 
@@ -221,6 +246,7 @@ const CreateProduct_Dialog = ({
         body: JSON.stringify({
           ...formData,
           price: formData.price ? Number(formData.price) : 0,
+          avatarImage: formData.galleryImages[0] || "",
         }),
         headers: myHeaders,
       });
@@ -230,6 +256,7 @@ const CreateProduct_Dialog = ({
         body: JSON.stringify({
           ...formData,
           price: formData.price ? Number(formData.price) : 0,
+          avatarImage: formData.galleryImages[0] || "",
         }),
         headers: myHeaders,
       });
@@ -402,15 +429,109 @@ const CreateProduct_Dialog = ({
                 </span>
               </div>
 
-              <div className={styles.optionCar}>
-                <h3 className={styles.promo_title}>
-                  <InlineEdit
-                    value={formData.promotion}
-                    variant="span"
-                    sx={{ fontSize: 15 }}
-                    onSave={(val) => handleUpdate("promotion", val)}
-                  />
-                </h3>
+              <div className={styles.variants_section}>
+                <h3 className={styles.promo_title}>Bảng giá xe ô tô {formData.name} SAU ƯU ĐÃI</h3>
+                <div className={styles.variants_list}>
+                  <ul className={styles.variants_ul}>
+                    {formData.variants.map((variant_item, index) => (
+                      <li
+                        key={variant_item.name + index}
+                        className={styles.variants_item}
+                      >
+                        <span>{variant_item.name || "Name"} :</span>
+                        <span className="text-primary">
+                          {formatNumber(variant_item.price) != "NaN"
+                            ? formatNumber(variant_item.price)
+                            : variant_item.price}{" "}
+                          vnđ{" "}
+                        </span>
+                        <i
+                          className="btn-red"
+                          onClick={() =>
+                            setFormData((pre) => ({
+                              ...pre,
+                              variants: [
+                                ...pre.variants.filter((_, i) => index != i),
+                              ],
+                            }))
+                          }
+                        >
+                          <CiCircleRemove size={29} />
+                        </i>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {!openFormVariant && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{
+                      mt: 5,
+                    }}
+                    onClick={() => setOpenFormVariant((pre) => !pre)}
+                  >
+                    Thêm giá khuyến mãi
+                  </Button>
+                )}
+                {openFormVariant && (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      setFormData((pre) => ({
+                        ...pre,
+                        variants: [...pre.variants, variantItem],
+                      }));
+
+                      setVariantItem({ name: "", price: "" });
+                      setOpenFormVariant((pre) => !pre);
+                    }}
+                  >
+                    <Grid container spacing={1} sx={{ mt: 5 }}>
+                      <Grid size={6}>
+                        <TextField
+                          label="Tên phiên bản"
+                          fullWidth
+                          size="small"
+                          value={variantItem.name}
+                          onChange={(e) =>
+                            setVariantItem((pre) => ({
+                              ...pre,
+                              name: e.target.value,
+                            }))
+                          }
+                          placeholder="VD: Jaecoo J7 Phev SHS"
+                        />
+                      </Grid>
+                      <Grid size={6}>
+                        <TextField
+                          label="Giá niêm yết (VNĐ)"
+                          size="small"
+                          type="number"
+                          fullWidth
+                          value={variantItem.price}
+                          onChange={(e) =>
+                            setVariantItem((pre) => ({
+                              ...pre,
+                              price: e.target.value,
+                            }))
+                          }
+                        />
+                      </Grid>
+                      <Grid size={12}>
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          color="primary"
+                          fullWidth
+                        >
+                          Cập nhật danh sách
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </form>
+                )}
               </div>
 
               <div className={styles.promotion_box}>
@@ -434,7 +555,9 @@ const CreateProduct_Dialog = ({
 
             <Specifications_Create
               silder={Array.from(formData.galleryImages)}
-              data={formData.Specifications}
+              data={formData}
+              handleUpdateSpecs={(field, newValue, index)=>handleUpdateSpecs(field, newValue, index)}
+              handleUpdateDeps={(val)=>handleUpdate("descriptionShort", val)}
             />
             {formData.detailBlocks.map((value, index) => (
               <ImageSection_Create
@@ -442,7 +565,6 @@ const CreateProduct_Dialog = ({
                 data={value}
                 item={value}
                 formData={formData}
-                handleUpdate={(newValue) => handleBigImage(newValue)}
                 updateDetailBlock={(field, newValue) =>
                   updateDetailBlock(index, field, newValue)
                 }
@@ -451,8 +573,8 @@ const CreateProduct_Dialog = ({
                 handleRemoveImageChile={(indexImage) =>
                   handleRemoveImageChile(index, indexImage)
                 }
-                handleImageChildSection={(file) =>
-                  handleImageChildSection(file, index)
+                handleImageChildSection={(file, bigImageSection) =>
+                  handleImageChildSection(file, index, bigImageSection)
                 }
               />
             ))}
@@ -499,7 +621,6 @@ const CreateProduct_Dialog = ({
             textTransform: "none",
             px: 3,
             color: "#ff3231",
-           
           }}
           className="btn-red"
         >

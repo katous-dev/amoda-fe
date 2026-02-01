@@ -1,21 +1,10 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import styles from "@/styles/components/silder.module.css";
-import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import defaultImage from "../public/image/default-placeholder.png";
 import styles_image from "@/styles/ImageNext.module.css";
 import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
-
-const init = [
-  {
-    imgLink: "",
-    nameTitle: "Banner Xuân 1",
-    order: 1,
-    __v: 0,
-    _id: "6979d7e1961ab27a439942bc",
-  },
-];
 
 const Slider = ({
   listSilder = [],

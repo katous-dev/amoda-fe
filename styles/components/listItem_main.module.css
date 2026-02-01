@@ -73,14 +73,13 @@
 .btn_action {
   text-decoration: none;
   font-size: 13px;
-  color: #555;
+  color: var(--primary-gray); 
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .btn_action:hover {
-  color: var(--primary-red);
-  /* text-decoration: none; */
+  color: var(--primary-blue);
 }
 
 

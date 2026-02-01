@@ -17,7 +17,7 @@ export default function FormRegister({ open, handleClose }) {
     name: "",
     contact: "",
     message: "",
-    installment: false,
+    paymentMethods: "Trả góp",
   });
 
   const fecthProducts = () => {
@@ -74,6 +74,7 @@ export default function FormRegister({ open, handleClose }) {
       open={open}
       onClose={() => Close()}
       disableEnforceFocus
+      fullWidth={true}
       maxWidth="sm"
       PaperProps={{
         sx: {
@@ -111,7 +112,7 @@ export default function FormRegister({ open, handleClose }) {
           </div>
 
           <div className={styles.registration_form_block}>
-            <h2 className={styles.form_heading}>LÁI THỬ XE & TRẢI NGHIỆM</h2>
+            <h3 className={styles.form_heading}>LÁI THỬ XE</h3>
             <form
               className={styles.booking_form_inner}
               onSubmit={(e) => {
@@ -141,8 +142,8 @@ export default function FormRegister({ open, handleClose }) {
                   placeholder="Di động *"
                   required
                   className={styles.text_input}
-                  value={formData.phone}
-                  onChange={(e) => handleUpdate("phone", e.target.value)}
+                  value={formData.contact}
+                  onChange={(e) => handleUpdate("contact", e.target.value)}
                 />
               </div>
 
@@ -154,7 +155,7 @@ export default function FormRegister({ open, handleClose }) {
                   value={formData.selected}
                   className={styles.select_input}
                   onChange={(e) =>
-                    handleUpdate("selected", e.currentTarget.value)
+                    handleUpdate("message", e.currentTarget.value)
                   }
                 >
                   <option value="">Chọn xe</option>
@@ -171,9 +172,9 @@ export default function FormRegister({ open, handleClose }) {
                   <input
                     type="radio"
                     name="pay_method"
-                    value="installment"
-                    defaultChecked
-                    onChange={(e) => handleUpdate("select", true)}
+                    value="Trả góp"
+                    checked={formData.paymentMethods == "Trả góp"}
+                    onChange={(e) => handleUpdate("paymentMethods", e.target.value)}
                   />
                   <span className={styles.radio_text}>Trả góp</span>
                 </label>
@@ -181,8 +182,8 @@ export default function FormRegister({ open, handleClose }) {
                   <input
                     type="radio"
                     name="pay_method"
-                    value="full"
-                    onChange={(e) => handleUpdate("select", false)}
+                    value="Trả thẳng"
+                    onChange={(e) => handleUpdate("paymentMethods", e.target.value)}
                   />
                   <span className={styles.radio_text}>Trả thẳng</span>
                 </label>

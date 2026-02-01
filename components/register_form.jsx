@@ -15,7 +15,7 @@ export default function RegisterForm() {
     name: "",
     contact: "",
     message: "",
-    installment: false,
+    paymentMethods: "Trả góp",
   });
 
   const fecthProducts = () => {
@@ -161,26 +161,26 @@ export default function RegisterForm() {
             </div>
 
             <div className={styles.payment_options_group}>
-              <label className={styles.radio_label}>
-                <input
-                  type="radio"
-                  name="pay_method"
-                  value="installment"
-                  defaultChecked
-                  onChange={(e) => handleUpdate("select", true)}
-                />
-                <span className={styles.radio_text}>Trả góp</span>
-              </label>
-              <label className={styles.radio_label}>
-                <input
-                  type="radio"
-                  name="pay_method"
-                  value="full"
-                  onChange={(e) => handleUpdate("select", false)}
-                />
-                <span className={styles.radio_text}>Trả thẳng</span>
-              </label>
-            </div>
+                <label className={styles.radio_label}>
+                  <input
+                    type="radio"
+                    name="pay_method"
+                    value="Trả góp"
+                    checked={formData.paymentMethods == "Trả góp"}
+                    onChange={(e) => handleUpdate("paymentMethods", e.target.value)}
+                  />
+                  <span className={styles.radio_text}>Trả góp</span>
+                </label>
+                <label className={styles.radio_label}>
+                  <input
+                    type="radio"
+                    name="pay_method"
+                    value="Trả thẳng"
+                    onChange={(e) => handleUpdate("paymentMethods", e.target.value)}
+                  />
+                  <span className={styles.radio_text}>Trả thẳng</span>
+                </label>
+              </div>
 
             <button type="submit" className={styles.submit_btn_blue}>
               NHẬN THÔNG TIN

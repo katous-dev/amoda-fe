@@ -4,13 +4,11 @@ import { useRouter } from "next/router";
 import styles_image from "../../styles/ImageNext.module.css";
 import Image from "next/image";
 import styles from "../../styles/product_detail.module.css";
-import { FaFire } from "react-icons/fa";
-import { FaCircleCheck } from "react-icons/fa6";
 import Tabs from "../../components/product_detail/tabs";
 import Specifications from "../../components/product_detail/specifications";
 import ImageSection from "../../components/product_detail/imageSection";
 import Slider from "../../components/slider";
-import FormRegister from "../../components/dialogs/form_register"
+import FormBuyCar from "../../components/dialogs/form_buy_car"
 import { AiOutlineZoomIn } from "react-icons/ai";
 import { CiGift } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa6";
@@ -19,6 +17,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import PopupImage from "../../components/dialogs/popup_img";
 import Link from "next/link";
+import defaultImage from "../../public/image/default-placeholder.png";
+import { useRouter as useRouterNavigate } from "next/navigation";
 
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 const myHeaders = new Headers();
@@ -71,6 +71,7 @@ const mockData = {
   avatarImage: "",
   createdAt: "",
   detailBlocks: [detailBlock],
+  variants: [],
   galleryImages: [],
   name: "",
   price: 0,
@@ -82,6 +83,7 @@ const mockData = {
 
 export default function ProuctDetail() {
   const router = useRouter();
+  const routerNavigate = useRouterNavigate();
   const { slug } = router.query;
   const [activeTab, setActiveTab] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
@@ -93,30 +95,32 @@ export default function ProuctDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [realTimeIndex, setRealTimeIndex] = useState(0);
 
-  const fecthBanner = () => {
-    fetch(`${BE_URL}/products/${slug} `, {
-      method: "GET",
-      headers: myHeaders,
-    })
-      .then((res) => {
-        if (!res.ok) {
-          router.replace("/");
-          return;
-        }
-        return res.json();
-      })
-      .then((res) => {
-        setCurrentProduct(res);
-        setCurrentIndex(0);
-      })
-      .catch((err) => {
-        console.log(err);
+  const fetchBanner = async () => {
+    try {
+      const res = await fetch(`${BE_URL}/products/${slug}`, {
+        method: "GET",
+        headers: myHeaders,
       });
+
+      if (!res.ok) {
+        console.log("Fetch failed, redirecting to home...");
+        setCurrentProduct(mockData);
+        await routerNavigate.push("/");
+        return; 
+      }
+
+      const data = await res.json();
+      setCurrentProduct(data);
+      setCurrentIndex(0);
+    } catch (err) {
+      console.error("Lỗi kết nối hoặc hệ thống:", err);
+    }
   };
 
   useEffect(() => {
     if (slug) {
-      fecthBanner(slug);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      fetchBanner(slug);
     }
   }, [slug]);
 
@@ -128,31 +132,39 @@ export default function ProuctDetail() {
           <div className={styles.main_image_wrapper}>
             <Slider
               size={300}
-              listString={currentProduct.galleryImages}
+              listString={
+                currentProduct?.galleryImages != undefined
+                  ? currentProduct.galleryImages
+                  : []
+              }
               index={currentIndex}
               setIndex={(index) => setRealTimeIndex(index)}
             />
-            <div className={styles.zoom_icon} onClick={() => setOpenPopupImage(true)}>
+            <div
+              className={styles.zoom_icon}
+              onClick={() => setOpenPopupImage(true)}
+            >
               <AiOutlineZoomIn />
             </div>
           </div>
           <div className={styles.thumbnail_gallery}>
-            {currentProduct.galleryImages.map((imgSrc, index) => (
-              <div
-                className={styles_image.image_container}
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-              >
-                <Image
-                  src={imgSrc}
-                  alt={`${styles_image.custom_news_image} ${productData.name} - Thumbnail ${index + 1}`}
-                  className={`${styles.thumbnail_image} ${mainDisplayImage === imgSrc ? styles.active : ""}`}
-                  onClick={() => setMainDisplayImage(imgSrc)}
-                  priority
-                  fill
-                />
-              </div>
-            ))}
+            {currentProduct?.galleryImages != undefined &&
+              currentProduct.galleryImages.map((imgSrc, index) => (
+                <div
+                  className={styles_image.image_container}
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                >
+                  <Image
+                    src={imgSrc || defaultImage}
+                    alt={`${styles_image.custom_news_image} ${productData.name} - Thumbnail ${index + 1}`}
+                    className={`${styles.thumbnail_image} ${mainDisplayImage === imgSrc ? styles.active : ""}`}
+                    onClick={() => setMainDisplayImage(imgSrc)}
+                    priority
+                    fill
+                  />
+                </div>
+              ))}
           </div>
         </div>
 
@@ -167,24 +179,40 @@ export default function ProuctDetail() {
             </span>
           </div>
 
+          <div className={styles.variants_section}>
+            <h3 className={styles.promo_title}>
+              Bảng giá xe ô tô {currentProduct.name} SAU ƯU ĐÃI
+            </h3>
+            <div className={styles.variants_list}>
+              <ul className={styles.variants_ul}>
+                {currentProduct?.variants != undefined &&
+                  currentProduct.variants.map((variant_item, index) => (
+                    <li
+                      key={variant_item.name + index}
+                      className={styles.variants_item}
+                    >
+                      <span>{variant_item.name || "Name"} :</span>
+                      <span className="text-primary">
+                        {formatNumber(variant_item.price) != "NaN"
+                          ? formatNumber(variant_item.price)
+                          : variant_item.price}{" "}
+                        vnđ{" "}
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+
           <div className={styles.promotion_box}>
-            <h3 className={styles.promo_title}>KHUYẾN MÃI & ƯU ĐÃI THÁNG 1</h3>
-            <ul className={styles.promo_list}>
-              {productData.promotions.map((promo, index) => (
-                <li
-                  key={index}
-                  className={`${styles.promo_item} styles.promo_${promo.type}`}
-                >
-                  {promo.type === "hot" ? <FaFire /> : <FaCircleCheck />}
-                  &nbsp;
-                  {promo.text}
-                </li>
-              ))}
-            </ul>
+            <div className={styles.promo_list}>{currentProduct.promotion}</div>
           </div>
 
           <div className={styles.action_buttons}>
-            <button className={`${styles.btn_action} ${styles.primary_btn}`} onClick={() => setOpenRegister(true)}>
+            <button
+              className={`${styles.btn_action} ${styles.primary_btn}`}
+              onClick={() => setOpenRegister(true)}
+            >
               <CiGift />
               BÁO GIÁ LĂN BÁNH
             </button>
@@ -198,7 +226,10 @@ export default function ProuctDetail() {
           </div>
 
           <div className={styles.social_icons}>
-            <Link href="https://www.facebook.com/share_channel/#" className={styles.icon_circle}>
+            <Link
+              href="https://www.facebook.com/share_channel/#"
+              className={styles.icon_circle}
+            >
               <FaFacebookF />
             </Link>
             <Link href="mailto:hotro@vidu.com" className={styles.icon_circle}>
@@ -216,8 +247,16 @@ export default function ProuctDetail() {
         ))}
       </div>
 
-      <FormRegister open={openRegister} handleClose={() => setOpenRegister(false)} />
-      <PopupImage open={openPopupImage} handleClose={() => setOpenPopupImage(false)} imageUrl={currentProduct.galleryImages[realTimeIndex]} altText={currentProduct.name} />
+      <FormBuyCar
+        open={openRegister}
+        handleClose={() => setOpenRegister(false)}
+      />
+      <PopupImage
+        open={openPopupImage}
+        handleClose={() => setOpenPopupImage(false)}
+        imageUrl={currentProduct.galleryImages[realTimeIndex]}
+        altText={currentProduct.name}
+      />
     </div>
   );
 }

@@ -5,7 +5,8 @@ import { formatNumber } from "../utils/formartNumber";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import FormRegister from "@/components/dialogs/form_register";
+import FormBuyCar from "@/components/dialogs/form_buy_car";
+import imageDefault from "@/public/image/default-placeholder.png";
 
 const mockData = [
   {
@@ -59,15 +60,14 @@ function ListItem_Main({ listData = mockData }) {
                       : car.price}{" "}
                     VNĐ
                   </span>
+                  
                 </p>
-
-                {/* <p className={styles.car_promo}>{car.promo}</p>
-              {car.note && <p className={styles.car_note}>{car.note}</p>} */}
+                <p className={styles.car_promo}>{car?.promotionHome || ""}</p>
               </div>
 
               <div className={styles.card_image}>
                 <Image
-                  src={car.avatarImage}
+                  src={car.avatarImage || imageDefault}
                   alt={car.name}
                   width={1000}
                   height={1000}
@@ -85,7 +85,7 @@ function ListItem_Main({ listData = mockData }) {
           </div>
         ))}
       </div>
-      <FormRegister open={openRegister} handleClose={() => setOpenRegister(false)}/>
+      <FormBuyCar open={openRegister} handleClose={() => setOpenRegister(false)}/>
     </div>
   );
 }

@@ -10,6 +10,7 @@
   --primary-blue: #3b82f6; /* Xanh chủ đạo */
   --primary-hover: #254670; /* Xanh đậm hơn khi click nút */
   --light-hover: #f3f4f6; /* Xám nhẹ khi hover dòng bảng */
+  --primary-gray:#525252;
 
   /* Sidebar Specific */
   --sidebar-bg: #000000;
@@ -84,12 +85,12 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--primary-blue);
-  color: #ffffff;
+  background-color: var(--primary-blue) !important;
+  color: #ffffff !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--primary-hover) !important;
 }
 
 .btn-red {
