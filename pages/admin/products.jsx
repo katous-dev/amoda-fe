@@ -1,7 +1,14 @@
 "use client";
 import AdminLayout from "./layout";
 import { useEffect, useState } from "react";
-import { Box, TextField, InputAdornment, Button, Stack, CircularProgress } from "@mui/material";
+import {
+  Box,
+  TextField,
+  InputAdornment,
+  Button,
+  Stack,
+  CircularProgress,
+} from "@mui/material";
 import { Search, FilterList, Add } from "@mui/icons-material";
 import DynamicTable from "../../components/table/dynamicTable";
 import defaultImage from "../../public/image/default-placeholder.png";
@@ -77,7 +84,6 @@ export default function ProductTable() {
               borderRadius: 2,
               textTransform: "none",
               minWidth: { xs: "100%", md: "auto" },
-              
             }}
             className="btn-primary"
           >
@@ -93,7 +99,8 @@ export default function ProductTable() {
               textTransform: "none",
               minWidth: { xs: "100%", md: "auto" },
             }}
-            className="btn-red"> 
+            className="btn-red"
+          >
             Xóa
           </Button>
         </Box>
@@ -118,20 +125,22 @@ export default function ProductTable() {
       .finally(() => setLoading(false));
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    fecthData();
-  }, []);
+  useEffect(()=>{
+    if(String(searchText).trim() == ""){
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      fecthData();
+    }
+  },[searchText])
 
   const handleDelete = (slug) => {
-    
     if (openDelete.open) {
       if (!slug) return;
-
-       myHeaders.append(
-      "Authorization",
-      "Bearer " + localStorage.getItem("accessToken"),
-    );
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken"),
+      );
       fetch(`${BE_URL}/products/${slug}`, {
         method: "DELETE",
         headers: myHeaders,
@@ -157,7 +166,7 @@ export default function ProductTable() {
       if (searchText != "") {
         fetch(`${BE_URL}/search `, {
           method: "POST",
-          body: JSON.stringify({ search: searchText }),
+          body: JSON.stringify({ q: searchText }),
           headers: myHeaders,
         })
           .then((res) => {
@@ -172,6 +181,8 @@ export default function ProductTable() {
           .catch((err) => {
             console.log(err);
           });
+      } else {
+        fecthData();
       }
     } catch (err) {
       console.log(err);
@@ -187,45 +198,54 @@ export default function ProductTable() {
         alignItems={{ xs: "stretch", md: "center" }}
         sx={{ mb: 3 }}
       >
-        <Stack direction="row" spacing={1}>
-          <form onSubmit={(e) => {
+        <form
+          onSubmit={(e) => {
             e.preventDefault();
             fecthSearchData();
-          }}>
-          <TextField
-            placeholder="Tìm kiếm..."
-            size="small"
-            value={searchText}
-            onChange={(e)=>setSearchText(e.target.value)}
-            sx={{
-              bgcolor: "white",
-              borderRadius: 2,
-              width: { md: 300 },
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: "var(--button-border)" },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search sx={{ color: "text.secondary" }} />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <button type="submit" style={{display:"none"}}></button>
-          </form>
-          <Button
-            variant="outlined"
-            startIcon={<FilterList />}
-            sx={{
-              borderRadius: 2,
-              textTransform: "none",
-              color: 'var(--button-color)',
-              borderColor: 'var(--button-border)',
-            }}
-          >
-            Lọc
-          </Button>
-        </Stack>
+          }}
+        >
+          <Stack direction="row" spacing={1}>
+            <TextField
+              placeholder="Tìm kiếm..."
+              size="small"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              sx={{
+                bgcolor: "white",
+                borderRadius: 2,
+                width: { md: 300 },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "var(--button-border)",
+                },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search sx={{ color: "text.secondary" }} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <button type="submit" style={{ display: "none" }}></button>
+            <Button
+              variant="outlined"
+              type="submit"
+              startIcon={<FilterList />}
+              sx={{
+                borderRadius: 2,
+                textTransform: "none",
+                color: "var(--button-color)",
+                borderColor: "var(--button-border)",
+                "&:hover": {
+                  color: "var(--button-border)",
+                },
+              }}
+            >
+              Lọc
+            </Button>
+          </Stack>
+        </form>
+
         <Stack direction="row" spacing={1}>
           <Button
             variant="contained"
@@ -235,14 +255,21 @@ export default function ProductTable() {
               borderRadius: 2,
               textTransform: "none",
             }}
-           className="btn-primary"
+            className="btn-primary"
           >
             Thêm sản phẩm
           </Button>
         </Stack>
       </Stack>
       {loading ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "50vh",
+          }}
+        >
           <CircularProgress />
         </Box>
       ) : (

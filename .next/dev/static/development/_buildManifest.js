@@ -8,9 +8,6 @@ self.__BUILD_MANIFEST = {
   "/admin/banner": [
     "static/chunks/pages/admin/banner.js"
   ],
-  "/admin/dashboard": [
-    "static/chunks/pages/admin/dashboard.js"
-  ],
   "/admin/news": [
     "static/chunks/pages/admin/news.js"
   ],
@@ -23,17 +20,8 @@ self.__BUILD_MANIFEST = {
   "/news": [
     "static/chunks/pages/news.js"
   ],
-  "/news/[slug]": [
-    "static/chunks/pages/news/[slug].js"
-  ],
-  "/price": [
-    "static/chunks/pages/price.js"
-  ],
   "/products/[slug]": [
     "static/chunks/pages/products/[slug].js"
-  ],
-  "/register": [
-    "static/chunks/pages/register.js"
   ],
   "/search/[slug]": [
     "static/chunks/pages/search/[slug].js"

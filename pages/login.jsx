@@ -7,9 +7,35 @@ const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
+const initSecond = 30;
+
 const Login = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({ email: "", otp: "" });
+  const [blockBtnSendMail, setBlockBtnSendMail] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [seconds, setSeconds] = useState(initSecond);
+
+  const handleReset = () => {
+    setIsActive(false);
+    setSeconds(initSecond);
+  };
+
+  useEffect(() => {
+    let timer;
+    if (seconds <= 0) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      handleReset()
+      setBlockBtnSendMail(false);
+      return;
+    }
+    if (isActive && seconds > 0) {
+      timer = setInterval(() => {
+        setSeconds((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [isActive, seconds]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,16 +49,25 @@ const Login = () => {
           toast.error("Lỗi khi đăng nhập");
           return;
         }
+        setIsActive(false);
         return res.json();
       })
       .then((res) => {
-        if(res.token)localStorage.setItem("accessToken", res.token);
+        if (res.token) localStorage.setItem("accessToken", res.token);
         router.push("/admin/products");
         toast.success(res.message);
+      })
+      .finally(() => {
+        handleReset();
+        setBlockBtnSendMail(false);
       });
   };
 
+
+
   const handleSendOtp = () => {
+    setIsActive(true);
+    setBlockBtnSendMail(true);
     fetch(`${BE_URL}/auth/sendOtp`, {
       method: "POST",
       body: JSON.stringify({ email: formData.email }),
@@ -51,9 +86,7 @@ const Login = () => {
     <div className={styles.container}>
       <div className={styles.loginCard}>
         <h1 className={styles.title}>Đăng nhập</h1>
-        <p className={styles.subtitle}>
-          Nhập thông tin đăng nhập của bạn
-        </p>
+        <p className={styles.subtitle}>Nhập thông tin đăng nhập của bạn</p>
 
         <form className={styles.form} onSubmit={handleLogin}>
           <div className={styles.inputGroup}>
@@ -70,11 +103,11 @@ const Login = () => {
               />
               <button
                 type="button"
-                className={`${styles.eyeIcon} btn-primary`}
-                
+                className={`${styles.eyeIcon} btn-primary ${blockBtnSendMail && styles.disable_btn}`}
                 onClick={handleSendOtp}
+                disabled={blockBtnSendMail}
               >
-                Gửi mã
+                Gửi mã {blockBtnSendMail && `(${seconds})`}
               </button>
             </div>
           </div>
@@ -97,6 +130,7 @@ const Login = () => {
           <button
             type="submit"
             className={`${styles.signInBtn} ${formData.otp == "" && styles.disable_btn}`}
+            disabled={formData.otp == ""}
           >
             Xác nhận
           </button>

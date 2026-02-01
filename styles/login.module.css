@@ -120,7 +120,7 @@
 }
 .disable_btn,
 .disable_btn:hover {
-  background-color: #bebebe;
+  background-color: #bebebe !important;
 }
 
 .footerText {

@@ -23,8 +23,6 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
 
 const QuillEditor = dynamic(
   () => import("../../components/customs/quiliEdit"),
@@ -217,7 +215,7 @@ export default function Form_news({
 
       <DialogContent sx={{ mt: 3 }}>
         <Grid container spacing={4}>
-          <Grid item  size={12}>
+          <Grid item size={12}>
             <header className={styles_detail.article_header}>
               <span className={styles_detail.category_tag}>TIN TỨC</span>
               <h1
@@ -330,7 +328,6 @@ export default function Form_news({
             textTransform: "none",
             px: 3,
           }}
-
           className="btn-primary"
         >
           {editForm ? "Cập nhật" : "Tạo"}

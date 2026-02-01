@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import AdminLayout from "./layout";
 import DynamicTable from "../../components/table/dynamicTable";
 import Delete_Dialog from "../../components/dialogs/delete";
-import { Box, Button, CircularProgress, InputAdornment, Stack, TextField } from "@mui/material";
-import { Add, FilterList, Search } from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  InputAdornment,
+  Stack,
+  TextField,
+} from "@mui/material";
+import { Add } from "@mui/icons-material";
 import Image from "next/image";
 import defaultImage from "../../public/image/default-placeholder.png";
 import { toast } from "react-toastify";
@@ -77,7 +84,7 @@ export default function Banner() {
               textTransform: "none",
               minWidth: { xs: "100%", md: "auto" },
             }}
-            className="btn-primary" 
+            className="btn-primary"
           >
             Sửa
           </Button>
@@ -89,7 +96,6 @@ export default function Banner() {
             sx={{
               borderRadius: 2,
               textTransform: "none",
-
             }}
             className="btn-red"
           >
@@ -127,6 +133,10 @@ export default function Banner() {
       if (!slug) return;
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
+      myHeaders.append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken"),
+      );
       fetch(`${BE_URL}/bannerHome/deleteBanner/${slug}`, {
         method: "DELETE",
         headers: myHeaders,
@@ -167,14 +177,21 @@ export default function Banner() {
               // bgcolor: "#635BFF",
               // "&:hover": { bgcolor: "#5249f0" },
             }}
-            className="btn-primary" 
+            className="btn-primary"
           >
             Thêm banner
           </Button>
         </Stack>
       </Stack>
       {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "50vh",
+          }}
+        >
           <CircularProgress />
         </Box>
       ) : (

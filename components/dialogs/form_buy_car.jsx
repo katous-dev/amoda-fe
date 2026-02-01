@@ -80,6 +80,8 @@ export default function FormBuyCar({ open, handleClose }) {
   });
 
   const fecthProducts = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     fetch(`${BE_URL}/products `, {
       method: "GET",
       headers: myHeaders,
@@ -132,6 +134,8 @@ export default function FormBuyCar({ open, handleClose }) {
   };
 
   const handleSubmit = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     setLoading(true);
     fetch(`${BE_URL}/email/businessCustomers/ `, {
       method: "POST",
@@ -318,7 +322,7 @@ export default function FormBuyCar({ open, handleClose }) {
                       className={styles.submit_btn_blue}
                       disabled={loading}
                     >
-                      {loading ? "ĐANG TÍNH TOÁN" : "NHẬN THÔNG TIN"}
+                      {loading ? "ĐANG TÍNH TOÁN" : "BÁO GIÁ"}
                     </button>
                   )}
                 </form>

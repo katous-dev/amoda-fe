@@ -19,7 +19,7 @@ export default function SearchPage() {
     try {
       fetch(`${BE_URL}/search `, {
         method: "POST",
-        body: JSON.stringify({ search: slug }),
+        body: JSON.stringify({ q: slug }),
         headers: myHeaders,
       })
         .then((res) => {

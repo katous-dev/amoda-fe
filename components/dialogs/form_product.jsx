@@ -29,8 +29,6 @@ import { formatNumber } from "../../utils/formartNumber";
 import { CiCircleRemove } from "react-icons/ci";
 
 const BE_URL = process.env.NEXT_PUBLIC_BE_URL;
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
 
 const mockdata = {
   name: "Tên sản phẩm",
@@ -243,7 +241,6 @@ const CreateProduct_Dialog = ({
 
     let result;
     if (editForm && item) {
-      console.log(formData);
       result = fetch(`${BE_URL}/products/${item.slug}`, {
         method: "PUT",
         body: JSON.stringify({

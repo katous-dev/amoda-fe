@@ -1,7 +1,14 @@
 "use client";
 import AdminLayout from "./layout";
 import { useEffect, useState } from "react";
-import { Box, TextField, InputAdornment, Button, Stack, CircularProgress } from "@mui/material";
+import {
+  Box,
+  TextField,
+  InputAdornment,
+  Button,
+  Stack,
+  CircularProgress,
+} from "@mui/material";
 import { Search, FilterList, Add } from "@mui/icons-material";
 import DynamicTable from "../../components/table/dynamicTable";
 import Form_news from "../../components/dialogs/form_news";
@@ -63,7 +70,7 @@ export default function NewsTable() {
       if (searchText != "") {
         fetch(`${BE_URL}/search `, {
           method: "POST",
-          body: JSON.stringify({ search: searchText }),
+          body: JSON.stringify({ q: searchText }),
           headers: myHeaders,
         })
           .then((res) => {
@@ -84,10 +91,12 @@ export default function NewsTable() {
     }
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    fecthData();
-  }, []);
+  useEffect(()=>{
+    if(String(searchText).trim() == ""){
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      fecthData();
+    }
+  },[searchText])
 
   const newsColumns = [
     {
@@ -132,7 +141,6 @@ export default function NewsTable() {
               textTransform: "none",
               minWidth: { xs: "100%", md: "auto" },
             }}
-
             className="btn-primary"
           >
             Sửa
@@ -147,7 +155,6 @@ export default function NewsTable() {
               textTransform: "none",
               minWidth: { xs: "100%", md: "auto" },
             }}
-
             className="btn-red"
           >
             Xóa
@@ -162,6 +169,10 @@ export default function NewsTable() {
       if (!slug) return;
       const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
+      myHeaders.append(
+        "Authorization",
+        "Bearer " + localStorage.getItem("accessToken"),
+      );
       fetch(`${BE_URL}/news/${slug}`, {
         method: "DELETE",
         headers: myHeaders,
@@ -191,45 +202,55 @@ export default function NewsTable() {
         alignItems={{ xs: "stretch", md: "center" }}
         sx={{ mb: 3 }}
       >
-        <Stack direction="row" spacing={1}>
-          <form onSubmit={(e) => {
+        <form
+          onSubmit={(e) => {
             e.preventDefault();
             fecthSearchData();
-          }}>
-          <TextField
-            placeholder="Tìm kiếm..."
-            size="small"
-            value={searchText}
-            onChange={(e)=>setSearchText(e.target.value)}
-            sx={{
-              bgcolor: "white",
-              borderRadius: 2,
-              width: { md: 300 },
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: 'var(--button-border)' },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search sx={{ color: "text.secondary" }} />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <button type="submit" style={{display:"none"}}></button>
-          </form>
-          <Button
-            variant="outlined"
-            startIcon={<FilterList />}
-            sx={{
-              borderRadius: 2,
-              textTransform: "none",
-              color: 'var(--button-color)',
-              borderColor: 'var(--button-border)',
-            }}
-          >
-            Lọc
-          </Button>
-        </Stack>
+          }}
+        >
+          {" "}
+          <Stack direction="row" spacing={1}>
+            <TextField
+              placeholder="Tìm kiếm..."
+              size="small"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              sx={{
+                bgcolor: "white",
+                borderRadius: 2,
+                width: { md: 300 },
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "var(--button-border)",
+                },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search sx={{ color: "text.secondary" }} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <button type="submit" style={{ display: "none" }}></button>
+            <Button
+              variant="outlined"
+              startIcon={<FilterList />}
+              type="submit"
+              sx={{
+                borderRadius: 2,
+                textTransform: "none",
+                color: "var(--button-color)",
+                borderColor: "var(--button-border)",
+                "&:hover": {
+                  color: "var(--button-border)",
+                },
+              }}
+            >
+              Lọc
+            </Button>
+          </Stack>
+        </form>
+
         <Stack direction="row" spacing={1}>
           <Button
             variant="contained"
@@ -239,15 +260,21 @@ export default function NewsTable() {
               borderRadius: 2,
               textTransform: "none",
             }}
-
-           className="btn-primary" 
+            className="btn-primary"
           >
             Thêm bảng tin
           </Button>
         </Stack>
       </Stack>
       {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "50vh",
+          }}
+        >
           <CircularProgress />
         </Box>
       ) : (

@@ -16,6 +16,7 @@ import { formatNumber } from "../../utils/formartNumber";
 import { FaFacebookF } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import PopupImage from "../../components/dialogs/popup_img";
+import RegisterForm from "../../components/register_form"
 import Link from "next/link";
 import defaultImage from "../../public/image/default-placeholder.png";
 import { useRouter as useRouterNavigate } from "next/navigation";
@@ -258,6 +259,8 @@ export default function ProuctDetail() {
         imageUrl={currentProduct.galleryImages[realTimeIndex]}
         altText={currentProduct.name}
       />
+
+      <RegisterForm />
     </div>
   );
 }
